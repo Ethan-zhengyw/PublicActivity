@@ -1,13 +1,13 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
 import models as md
 
 def setting(request):
+    #TODO check whether user have signin
     return render(request, 'setting.html', {'user': 'Ethan'})
 
 
 def s_setting(request):
-    print request.user.is_anonymous()
 
     oldPwd = request.POST['oldPwd']
     newPwd = request.POST['newPwd']
@@ -15,6 +15,8 @@ def s_setting(request):
 
     md.updatePwd('Amanda', oldPwd, newPwd, confirmPwd)
 
-    return render(request, 'setting.html', {'user': 'Ethan'})
+    introduction = request.POST['introduction']
+    gender = request.POST['gender']
+    md.updateBasicInfo(introduction, gender)
 
-
+    return HttpResponseRedirect('/setting')

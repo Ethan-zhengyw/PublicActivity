@@ -16,3 +16,15 @@ def updatePwd(username, oldPwd, newPwd, confirmPwd):
         user.password = md5HashPwd(newPwd)
         user.save()
         print 'user password updated!'
+
+
+# only update the gender and introduction
+def updateBasicInfo(introduction, gender):
+    print '/setting/models/updateBasicInfo'
+
+    user = User.objects(username='Amanda').first()
+    if user:
+        user.introduction = introduction
+        user.gender = gender
+        user.save()
+        print 'user basic info updated!'
