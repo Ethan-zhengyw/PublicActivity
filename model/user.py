@@ -1,4 +1,5 @@
 from mongoengine import *
+import hashlib
 
 connect('activity')
 
@@ -12,3 +13,7 @@ class User(Document):
     gender = IntField()
     hobby = StringField()
     tags = ListField()
+
+
+def md5HashPwd(password):
+    return hashlib.new('md5', password).hexdigest()

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}个人设置{% endblock %}
+
+{% block content %}
+<p> {{ user }} </p>
+<form method="post" action="/service/setting">
+
+  {% csrf_token %}
+  <label for="oldPwd">原密码</label>
+  <input type="password" name="oldPwd"/> 
+  <br />
+
+  <label for="newPwd">新密码</label>
+  <input type="password" name="newPwd"/> 
+  <br />
+
+  <label for="confirmPwd">确认密码</label>
+  <input type="password" name="confirmPwd"/> 
+  <br />
+
+  <input type="submit" value="提交">
+</form>
+{% endblock %}
