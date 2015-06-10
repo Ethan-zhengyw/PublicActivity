@@ -1,5 +1,12 @@
 from model.user import *
 
+def checkEmail(email):
+    user = User.objects(email=email).first()
+    if not user:
+        return True
+    else:
+        return False
+
 def updatePwd(username, oldPwd, newPwd, confirmPwd):
     print '/setting/models/updatePwd'
 

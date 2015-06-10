@@ -62,10 +62,10 @@ WSGI_APPLICATION = 'PublicActivity.wsgi.application'
 DBNAME = 'activity'
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.dummy',
-        'NAME': 'activity',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.dummy',
+        # 'NAME': 'activity',
     }
 }
 
@@ -96,3 +96,6 @@ TEMPLATE_DIRS = (
 # 自定义查找app的路径
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 sys.path.insert(0, BASE_DIR)
+
+SESSION_ENGINE = 'mongoengine.django.sessions'
+SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'

@@ -4,7 +4,7 @@ import hashlib
 connect('activity')
 
 class User(Document):
-    username = StringField(required=True, unique=True)
+    username = StringField(unique=True)
     password = StringField(required=True)
     email = EmailField(required=True, unique=True)
     user_type = IntField(required=True)
