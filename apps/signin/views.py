@@ -18,3 +18,7 @@ def s_signin(request):
 			return HttpResponse("{'status': '0', 'message' : 'Login Error'}")
 	return HttpResponse("{}")
 
+def logout(request):
+	del request.session['email']
+	del request.session['user_type']
+	return HttpResponse("{}")	
