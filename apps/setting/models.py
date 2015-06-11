@@ -35,3 +35,9 @@ def updateBasicInfo(introduction, gender):
         user.gender = gender
         user.save()
         print 'user basic info updated!'
+
+def findUser(email):
+    user = User.objects(email=email).first()
+    print user.username
+    print user.email
+    return user
