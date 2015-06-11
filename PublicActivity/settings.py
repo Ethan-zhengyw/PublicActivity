@@ -98,4 +98,4 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 sys.path.insert(0, BASE_DIR)
 
 SESSION_ENGINE = 'mongoengine.django.sessions'
-SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'
+# SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'
