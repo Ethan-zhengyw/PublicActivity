@@ -15,6 +15,7 @@ class User(Document):
 
     concern = ListField()
     participate = ListField()
+    create = ListField()
 
 
 def md5HashPwd(password):
