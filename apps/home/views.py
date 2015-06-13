@@ -1,10 +1,17 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.http import HttpResponse
+import models as md
 
 def explore(request):
-    return HttpResponse('发现 首页 第一个Tab 查看所有公益活动')
+	activities = md.findAllActivities()
+    tmp = get_template('home.html')
+    html = tmp.render(Context({'activities' : activities}))
+    return HttpResponse(html)
 
 
 def host(request):
-    return HttpResponse('发现 首页 第二个Tab 查看所有我关注的公益活动and报名的')
+	activities = md.findConcernedActivities(request.session['email'])
+    tmp = get_template('host.html')
+    html = tmp.render(Context({'activities' : activities}))
+    return HttpResponse(html)
