@@ -5,43 +5,50 @@
 {% block content %}
 <p> {{ user.email }} </p>
 
-<form method="post" action="/service/create">
+<link href="./css/create.css" rel="stylesheet" type="text/css" /> 
 
-  {% csrf_token %}
-  <label for="name">活动名称</label>
-  <input type="text" name="name"/> 
-  <br />
+<div id="create_main">
+    <div id="create_first">
+        <h1>发起活动<h1>
+    </div>
+    <div id="create_second">
+        <form method="post" action="/service/create">
+            {% csrf_token %}
+            <label for="name">活动名称</label>
+            <input class="font" type="text" name="name"/> 
+            <br />
 
-  <label for="location">活动地点</label>
-  <input type="text" name="location"/>
-  <br />
+            <label for="location">活动地点</label>
+            <input class="font" type="text" name="location"/>
+            <br />
 
-  <label for="introduction">活动介绍</label>
-  <input type="text" name="introduction"/>
-  <br />
+            <label for="introduction">活动介绍</label>
+            <input class="font" type="text" name="introduction"/>
+            <br />
 
-  <label for="host">举办方</label>
-  <input type="text" name="host"/>
-  <br />
+            <label for="host">举办方</label>
+            <input class="font" type="text" name="host"/>
+            <br />
 
-  <label for="tags">标签</label>
-  <input type="checkbox" name="tag_teach"/> 支教
-  <input type="checkbox" name="tag_blood"/> 献血
-  <input type="checkbox" name="tag_pe"/> 体育
-  <input type="checkbox" name="tag_music"/> 音乐
-  <input type="checkbox" name="tag_tree"/> 环保
-  <input type="checkbox" name="tag_old"/> 敬老
-  <br />
+            <label for="tags">活动标签</label>
+            <input type="checkbox" name="tag_teach"/> 支教
+            <input type="checkbox" name="tag_blood"/> 献血
+            <input type="checkbox" name="tag_pe"/> 体育
+            <input type="checkbox" name="tag_music"/> 音乐
+            <input type="checkbox" name="tag_tree"/> 环保
+            <input type="checkbox" name="tag_old"/> 敬老
+            <br />
 
-  <label for="starttime">开始时间</label>
-  <input type="text" name="starttime"/> 
-  <br />
+            <label for="starttime">开始时间</label>
+            <input class="font" type="datetime-local" name="starttime"/> 
+            <br />
 
-  <label for="deadline">报名截止时间</label>
-  <input type="text" name="deadline"/> 
-  <br />
+            <label for="deadline">截止时间</label>
+            <input class="font" type="text" name="deadline"/> 
+            <br />
 
-  <input type="submit" value="提交">
-</form>
-
-{% endblock %}
+            <input type="submit" value="下一步">
+        </form>
+        </div>
+    </div>
+    {% endblock %}
