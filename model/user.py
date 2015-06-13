@@ -13,6 +13,9 @@ class User(Document):
     gender = IntField()
     tags = ListField()
 
+    concern = ListField()
+    participate = ListField()
+
 
 def md5HashPwd(password):
     return hashlib.new('md5', password).hexdigest()

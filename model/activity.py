@@ -12,3 +12,7 @@ class Activity(Document):
     tags = ListField()
     creater_id = StringField(required=True)
     location = StringField(required=True)
+
+    isPass = IntField(required=True)  # 是否通过
+    concern = ListField()  # 关注的人
+    participate = ListField()  # 报名
