@@ -34,7 +34,14 @@ urlpatterns = patterns('',
     url(r'^home$', 'home.views.explore', name='explore'),                   # 发现, 首页第一个Tab，查看所有公益活动
     url(r'^host$', 'home.views.host', name='host'),                         # 查看我关注的活动&我报名参加的公益活动
 
-    url(r'^detail/(?P<aid>\w+)/$', 'create.views.create', name='create'),   # 发布公益活动的页面
+    url(r'^details/(?P<aid>\w+)$', 'details.views.details', name='details'),    # 公益活动详情页面
+
+    url(r'^server/(?P<aid>\w+)/follow$', 'details.views.follow', name='follow'),      # 关注
+    url(r'^server/(?P<aid>\w+)/unfollow$', 'details.views.unfollow', name='unfollow'),   # 取消关注
+
+    url(r'^server/(?P<aid>\w+)/join$', 'details.views.join', name='join'),      # 关注
+    url(r'^server/(?P<aid>\w+)/unjoin$', 'details.views.unjoin', name='unjoin'),   # 取消关注
+
 
     url(r'^admin/', include(admin.site.urls)),
 
