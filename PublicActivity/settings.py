@@ -99,3 +99,5 @@ sys.path.insert(0, BASE_DIR)
 
 SESSION_ENGINE = 'mongoengine.django.sessions'
 # SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'
+
+CSS_DIR = './static/css/'

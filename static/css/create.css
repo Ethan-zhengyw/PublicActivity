@@ -1,0 +1,24 @@
+#create_main{
+    background-color:rgb(246, 243, 236);
+    padding:30px 50px 50px 50px;
+}
+
+#create_second{
+    background-color:white;
+    padding:30px;
+}
+
+label{
+    display: inline-block;
+    width:80px;
+}
+
+input{
+    border-color:orange;
+    border-radius:8px;
+    margin-bottom:20px;
+} 
+
+.font{
+    width:300px;
+}
