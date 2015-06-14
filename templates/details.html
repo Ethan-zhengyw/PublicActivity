@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}活动详情{% endblock %}
+
+{% block content %}
+
+<link type="text/css" rel="stylesheet" href="/css/details.css">
+<link type="text/css" rel="stylesheet" href="/css/.css">
+<script type="text/javascript" src="/js/details.js"></script>
+	<div class="a-content">
+		<div class="a-c-left">
+			<div class="a-c-l-up">
+				<div class="a-c-l-u-left">
+          <img src="{{ activity.post }}" width="350" height="400">
+				</div>
+
+				<div class="a-c-l-u-right">
+					<br/>
+					<h1 class="a-c-l-h-name">{{activity.name}}</h1>
+					<br/>
+					<br/>
+					<br/>
+					<p class="a-c-l-h-startdate">&nbsp&nbsp活动开始时间：{{activity.start_time}}</p>
+					<br/>
+					<p class="a-c-l-h-deadline">&nbsp&nbsp报名截止时间：{{activity.deadline}}</p>
+					<br/>
+					<p class="a-c-l-h-location">&nbsp&nbsp活动地点：{{activity.location}}</p>
+					<br/>
+					<p class="a-c-l-h-organizer">&nbsp&nbsp发布者：{{activity.host}}</p>
+					<br/>
+					<p class="a-c-l-h-number">&nbsp&nbsp{{number1}}人报名&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{number2}}人关注</p>
+					<button type="button" id="a-c-l-h-button1" onclick="change_button1()"><h2 id="button1_" style="color:white">报名</h2></button>
+					<button type="button" id="a-c-l-h-button2" onclick="change_button2()"><h2 id="button2_" style="color:white">关注</h2></button>
+				</div>
+
+			</div>
+
+			<div class="a-c-l-down">
+				<div class="a-c-l-d-activity">
+				<br/>
+				<h1>活动详情</h1>
+				
+				<br/>
+				<br/>
+				<div class="a-c-l-d-a-content">
+				<p>{{activity.introduction}}</p>
+				</br>
+				</br>
+				</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="a-c-right">
+			<div class="a-c-r-tag">
+				</br>
+				<h2>活动标签</h2>
+				</br>
+				<div class="a-c-r-t-content">
+          {% for tag in tags %}
+          <button>{{ tag }}</button>
+          {% endfor %}
+				</div>
+			</div>
+			<div class="a-c-r-map">
+				</br>
+				<h2>活动地图</h2>
+				</br>
+				<div class="a-c-r-m-pic"><img src="/img/QQ截图20150612232048.png" width="200" height="150"></div>
+				
+			</div>
+			<div class="a-c-r-organization">
+				</br>
+				<h2>组织方信息</h2>
+				</br>
+				<div class="a-c-r-o-pic"><img src="/img/19300533959291133463959435881_s.jpg" width="150" height="150"></div>
+				<h4 style="color:#FFA042">中山大学软件学院团委</h4>
+				</br>
+				<p style="text-align: center">&nbsp&nbsp&nbsp中山大学</p>
+				<p style="text-align: center">&nbsp&nbsp&nbsp软件学院团委</p>
+				<p style="text-align: center">&nbsp&nbsp&nbspzhwnf@126.com</p>
+				<p style="text-align: center">&nbsp&nbsp&nbsp13485845858</p>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

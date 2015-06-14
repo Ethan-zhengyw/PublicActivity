@@ -1,0 +1,144 @@
+body,p,ul,li,button,input,img,div{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color:#E8E8D0;
+}
+
+.a-content{
+	width:1000px;
+	margin: 0 auto;
+}
+
+.a-c-left{
+	width: 750px;
+	float: left;
+}
+
+.a-c-right{
+	margin-top: 10px;
+	display: inline-block;
+	width: 250px;
+	height: 1000px;
+	float: left;
+}
+
+.a-c-l-up{
+	margin-top: 10px;
+	width: 750px;
+	height: 413px;
+}
+
+.a-c-l-u-left{
+	width: 350px;
+	float: left;
+}
+
+.a-c-l-u-right{
+	border-width: 1px;
+	border-color: #d0d0d0;
+	border-style: solid;
+	background-color: white;
+	width: 348px;
+	height: 401px;
+	float: left;
+	margin-left: 25px;
+}
+
+.a-c-l-h-number{
+	color: #EA7500;
+  text-align: center;
+  margin: auto;
+}
+
+#a-c-l-h-button1{
+	float: left;
+	background-color: #FFA042;
+	display: inline-block;
+	width: 120px;
+	height: 32px;
+	margin-left: 40px;
+	margin-top: 10px;
+	border-width: 1px;
+	border-color: #d0d0d0;
+	border-style: solid;
+	text-decoration: none;
+	font-style: normal;
+}
+
+#a-c-l-h-button2{
+	float: left;
+	background-color: #FFA042;
+	display: inline-block;
+	width: 120px;
+	height: 32px;
+	margin-left: 20px;
+	margin-top: 10px;
+	border-width: 1px;
+	border-color: #d0d0d0;
+	border-style: solid;
+	text-decoration: none;
+	font-style: normal;
+}
+
+h1,h2,h4{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.a-c-l-d-activity{
+	border-width: 1px;
+	border-color: #d0d0d0;
+	border-style: solid;
+	background-color: white;
+	margin-top: 20px;
+	width: 723px;
+}
+
+.a-c-l-d-a-content{
+	width: 700px;
+	margin: 0 auto;
+}
+
+.a-c-r-tag{
+	height: 150px;
+	background-color: white;
+	border-width: 1px;
+	border-color: #d0d0d0;
+	border-style: solid;
+	margin-bottom: 30px;
+}
+
+.a-c-r-t-content{
+	width: 200px;
+	margin: 0 auto;
+}
+
+.a-c-r-map{
+	height: 250px;
+	background-color: white;
+	border-width: 1px;
+	border-color: #d0d0d0;
+	border-style: solid;
+	margin-bottom: 30px;
+}
+
+.a-c-r-organization{
+	height: 350px;
+	background-color: white;
+	border-width: 1px;
+	border-color: #d0d0d0;
+	border-style: solid;
+	margin-bottom: 30px;
+}
+
+.a-c-r-m-pic{
+	margin-left: 25px;
+}
+
+.a-c-r-o-pic{
+	margin-left: 50px;
+}
