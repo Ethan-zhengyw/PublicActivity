@@ -18,9 +18,11 @@ urlpatterns = patterns('',
     #url(r'^homeTpl$', 'renderWithTpl.views.home', name='homeTpl'),
 
     url(r'^signup$', 'signup.views.signup', name='signup'),                 # 注册页面
+    url(r'^checkEmail$', 'signup.views.checkUsedEmail', name='checkEmail'),
     url(r'^service/signup$', 'signup.views.s_signup', name='s_signup'),     # 注册post表单地址
 
     url(r'^signin$', 'signin.views.signin', name='signin'),                 # 登录页面
+
     url(r'^service/signin$', 'signin.views.s_signin', name='s_signin'),     # 注册post表单地址
 
     url(r'^logout$', 'signin.views.logout', name='logout'),
