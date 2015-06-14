@@ -10,10 +10,12 @@ class Activity(Document):
     deadline = DateTimeField(required=True)
     introduction = StringField(required=True)
     host = StringField(required=True)
-    tags = ListField()
+    tags = StringField()
     creater_id = StringField(required=True)
     location = StringField(required=True)
 
     isPass = IntField(required=True)  # 是否通过
     concern = ListField()  # 关注的人
     participate = ListField()  # 报名
+
+    post = StringField()  # 活动海报

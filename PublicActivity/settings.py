@@ -101,3 +101,5 @@ SESSION_ENGINE = 'mongoengine.django.sessions'
 # SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'
 
 CSS_DIR = './static/css/'
+JS_DIR = './static/js/'
+IMG_DIR = './static/img/'
