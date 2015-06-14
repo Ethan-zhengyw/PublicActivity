@@ -11,7 +11,7 @@ class User(Document):
     introduction = StringField()
     avatar = StringField()
     gender = IntField()
-    tags = ListField()
+    tags = StringField()
 
     concern = ListField()
     participate = ListField()

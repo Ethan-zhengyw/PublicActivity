@@ -5,7 +5,7 @@ import models as md
 def setting(request):
     #TODO check whether user have signin
     print request.session['email']
-    return render(request, 'setting.html', {'user': md.findUser('123@123.com')})
+    return render(request, 'setting.html', {'user': md.findUser(request.session['email'])})
 
 
 def s_setting(request):
@@ -16,10 +16,12 @@ def s_setting(request):
 
     print request.POST['gender']
 
-    md.updatePwd('Amanda', oldPwd, newPwd, confirmPwd)
+    md.updatePwd(request.session['email'], oldPwd, newPwd, confirmPwd)
 
     introduction = request.POST['introduction']
     gender = request.POST['gender']
-    md.updateBasicInfo(introduction, gender)
+    avatar = request.POST['avatar']
+    tags = request.POST['tags']
+    md.updateBasicInfo(introduction, gender, avatar, tags)
 
     return HttpResponseRedirect('/setting')
