@@ -1,7 +1,9 @@
 from model.user import *
 
-def addUser(email, password, usertype):
-	p = User(email=email, password=md5HashPwd(password), user_type=usertype, username=email)
+def addUser(email, password, usertype, gender, username, tags):
+	p = User(email=email, password=md5HashPwd(password),
+			user_type=usertype, username=username, tags=tags,
+			gender=gender)
 	p.save()
 
 def checkEmail(email):
