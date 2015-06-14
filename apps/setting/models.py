@@ -7,11 +7,11 @@ def checkEmail(email):
     else:
         return False
 
-def updatePwd(username, oldPwd, newPwd, confirmPwd):
+def updatePwd(e_mail, oldPwd, newPwd, confirmPwd):
     print '/setting/models/updatePwd'
 
     # check original password and the username match or not
-    user = User.objects(username=username,
+    user = User.objects(email=e_mail,
             password=md5HashPwd(oldPwd)).first()
 
     if not user:
@@ -26,13 +26,15 @@ def updatePwd(username, oldPwd, newPwd, confirmPwd):
 
 
 # only update the gender and introduction
-def updateBasicInfo(introduction, gender):
+def updateBasicInfo(e_mail, introduction, gender, avatar, tags):
     print '/setting/models/updateBasicInfo'
 
-    user = User.objects(username='Amanda').first()
+    user = User.objects(email=e_mail).first()
     if user:
         user.introduction = introduction
         user.gender = gender
+        user.avatar = avatar
+        user.tags = tags
         user.save()
         print 'user basic info updated!'
 
