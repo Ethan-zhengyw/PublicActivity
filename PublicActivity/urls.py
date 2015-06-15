@@ -43,6 +43,8 @@ urlpatterns = patterns('',
     url(r'^server/(?P<aid>\w+)/join$', 'details.views.join', name='join'),      # 关注
     url(r'^server/(?P<aid>\w+)/unjoin$', 'details.views.unjoin', name='unjoin'),   # 取消关注
 
+    url(r'^manage$', 'manage.views.manage', name='manage'),
+    url(r'^manage/(\w+)$', 'manage.views.setPass', name='setPass'),
 
     url(r'^admin/', include(admin.site.urls)),
 
