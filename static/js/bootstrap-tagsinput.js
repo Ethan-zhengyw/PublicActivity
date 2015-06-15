@@ -44,10 +44,7 @@
     this.$element.after(this.$container);
 
     var inputWidth = (this.inputSize < 3 ? 3 : this.inputSize) + "em";
-    var inputHeight = "1em";
-    
     this.$input.get(0).style.cssText = "width: " + inputWidth + " !important;";
-    this.$input.get(0).style.cssText += "height: " + inputHeight + " !important;";
     this.build(options);
   }
 

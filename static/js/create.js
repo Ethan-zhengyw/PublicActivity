@@ -1,6 +1,6 @@
 (function(){
   $(function(){
-    $('#inputTime').datetimepicker();
+    $('.inputTime').datetimepicker();
     $('.btn-addTag').each(function(){
       $(this).click(function(){
         /* will be wrong if there are more than one input */
