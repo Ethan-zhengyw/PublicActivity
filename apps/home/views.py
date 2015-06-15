@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 import models as md
 
 def explore(request):
-    activities = md.findAllActivities()
+    activities = md.findAllActivities()[:8]
     # tmp = get_template('home.html')
     # html = tmp.render(Context({'activities' : activities}))
     # return HttpResponse(html)
