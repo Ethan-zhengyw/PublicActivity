@@ -7,7 +7,9 @@
 
 <link href="./css/create.css" rel="stylesheet" type="text/css" /> 
 <link href="./css/bootstrap.css" rel="stylesheet" type="text/css" /> 
-<script src="./js/jquery-2.0.0.js"></script>
+<link href="./css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" /> 
+<link href="./css/jasny-bootstrap.css" rel="stylesheet" type="text/css" /> 
+
 
 <div id="create_main">
     <div id="create_first">
@@ -31,11 +33,11 @@
                 </div>
                 <div class="form-attr form-group">
                     <label for="starttime">开始时间</label>
-                    <input id="inputTime" class="font form-control" type="datetime-local" name="starttime"/>
+                    <input class="inputTime font form-control" type="text" name="activity[time]"/>
                 </div>
                 <div class="form-attr form-group">
                     <label for="deadline">截止时间</label>
-                    <input class="font form-control" type="datetime-local" name="deadline"/>
+                    <input class="inputTime font form-control" type="text" name="activity[time]"/>
                 </div>
                 <div class="form-attr form-group">
                     <label for="tags">活动标签</label>
@@ -55,8 +57,22 @@
                     <button type="button" class="tagbtn btn-addTag btn btn-default">孤儿院</button>
                 </div>
                 <div class="form-attr form-group">
-                    <label for="indivoduction">活动介绍</label>
+                    <label class="activity_1" for="indivoduction">活动介绍</label>
                     <textarea id="inputHost"  required="" class="font form-control"></textarea>
+                </div>
+                <div class="form-attr form-group">
+                    <label class="activity_1" for="picture">活动海报</label>
+                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                        <div class="font fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                        <div>
+                            <span class="btn btn-default btn-file">
+                                <span class="fileinput-new">Select image</span>
+                                <span class="fileinput-exists">Change</span>
+                                <input type="file" name="...">
+                            </span>
+                            <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </form>
@@ -64,8 +80,12 @@
         <br />
         <button class="button btn btn-default" type="submit">下一步</button>
     </div>
+<script src="./js/jquery-2.0.0.js"></script>
 <script src="./js/bootstrap.min.js"></script>
-<script src="./js/bootstrap-tagsinput.js"></script>
 <script src="./js/create.js"></script>
+<script src="./js/bootstrap-tagsinput.js"></script>
 <script src="./js/layout.js"></script>
+<script src="./js/bootstrap-datetimepicker.js"></script>
+<script src="./js/jasny-bootstrap.js"></script>
+
 {% endblock %}
