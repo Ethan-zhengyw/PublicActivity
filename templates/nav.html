@@ -1,1 +1,12 @@
-<div>This is the nav bar from nav.html</div>
+<div id="header">
+	<h1>ACtivett</h1>
+	<a href="discover">发现活动</a>
+	<a href="mine">发现活动</a>
+	{% if user %} 
+		<a class="addActivity" href="addActivity">+</a>
+		<a class="profile" href="profile">{{user}}</a>
+	{% else %}
+		<a class="addActivity" href="signUp.html">注册</a>
+		<a class="profile" href="login.html">登录</a>
+	{% endif %}
+</div >

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign up{% endblock %}
+
+{% block content %}
+<p> {{ user }} </p>
+<form method="post" action="/service/signin">
+
+  {% csrf_token %}
+  <label for="email">Email</label>
+  <input type="text" name="email"/> 
+  <br />
+
+  <label for="password">密码</label>
+  <input type="password" name="password"/> 
+  <br />
+  <input type="submit" value="提交">
+</form>
+{% endblock %}
