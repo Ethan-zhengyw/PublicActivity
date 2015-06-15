@@ -1,0 +1,26 @@
+signup.html
+<!DOCTYPE html>
+<head>
+	<title>signUp</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet/less" type="text/css" href="bootstrap-tagsinput.less">
+	<link rel="stylesheet/less" type="text/css" href="include.less">
+	<link rel="stylesheet/less" type="text/css" href="signUp.less">
+	<script src="jquery-1.11.1.min.js"></script>
+	<script src="bootstrap-tagsinput.min.js"></script>
+	<script src="Less.js"></script>
+	<script src="signUp.js"></script>
+</head>
+<body> 
+	<div id="header">
+		<h1>ACtivett</h1>
+		<a href="discover">发现活动</a>
+		<a href="mine">发现活动</a>
+		{% if {{user}} %} 
+			<a class="addActivity" href="addActivity">+</a>
+			<a class="profile" href="profile">{{user}}</a>
+		{% else %}
+			<a class="addActivity" href="signUp.html">注册</a>
+			<a class="profile" href="login.html">登录</a>
+		{% end %}
+	</div >

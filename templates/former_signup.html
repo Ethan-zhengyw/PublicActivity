@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign up{% endblock %}
+
+{% block content %}
+<p> {{ user }} </p>
+
+<form method="post" action="/service/signup">
+
+  {% csrf_token %}
+  <label for="email">Email</label>
+  <input type="text" name="email"/> 
+  <br />
+
+  <label for="password">新密码</label>
+  <input type="password" name="password"/> 
+  <br />
+
+  <label for="confirmPwd">确认密码</label>
+  <input type="password" name="confirmPwd"/> 
+  <br />
+  <label for="user_type">Type</label>
+  <input type="radio" name="user_type" value="0" checked="True"/>
+  <input type="radio" name="user_type" value="1"/>
+
+  <input type="submit" value="提交">
+</form>
+
+{% endblock %}
