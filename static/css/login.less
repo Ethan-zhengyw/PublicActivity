@@ -1,0 +1,111 @@
+body, div, form, p, input {margin: 0; padding: 0}
+a {text-decoration: none}
+* {font-family: "Microsoft Yahei"}
+
+
+#content {
+	/*@content_height 是主模块的高度*/
+	@content_height: 470px;
+	background: url(background.png) repeat;
+	background-size: 50%;
+	width: 100%;
+	height: @content_height;
+	/*overflow是防止margin合并的*/
+	overflow: hidden;
+
+	#wrap {
+		@wrap_margin_vertical: 150px;
+		width: 900px;
+		height: @content_height - @wrap_margin_vertical;
+		margin: 50px auto @wrap_margin_vertical - 50px auto;
+		/*font-size:0 是防止块inline-block时候有多余间隙*/
+		font-size: 0;
+
+		& > div {
+			display: inline-block;
+
+			&:first-child {
+				width: 500px;
+				height: 100%;
+
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			&:last-child {
+				width: 240px;
+				height: @content_height - @wrap_margin_vertical - 100px;
+				padding: 50px 30px;
+				margin-left: 100px;
+				vertical-align: top;
+				background-color: #fff;
+
+				form {
+					span:first-child {
+						font-size: 20px;
+						font-weight: bold;
+						display: block;
+						margin-bottom: 30px;
+					}
+
+					input + span {
+						font-size: 14px;
+						line-height: 38px;
+						opacity: 0;
+						color: red;
+						vertical-align: top;
+						&.active {
+							opacity: 1;
+						}
+					}
+
+					img {
+						width: 33px;
+						height: 33px;
+					}
+
+					input[type="text"] {
+						width: 180px;
+						height: 31px;
+						padding-left: 10px;
+						border: 1px solid #EEAD22;
+						margin-bottom: 15px;
+						vertical-align: top;
+
+					}
+
+					input[type="password"] {
+						width: 180px;
+						height: 31px;
+						padding-left: 10px;
+						border: 1px solid #EEAD22;
+						margin-bottom: 35px;
+						vertical-align: top;
+					}
+
+					input[type="submit"] {
+						width: 227px;
+						font-size: 19px;
+						color: #fff;
+						line-height: 32px;
+						letter-spacing: 10px;
+						background-color: #EEAD22;
+						cursor: pointer;
+						border: none;
+						margin-bottom: 30px;
+					}
+				}
+
+				a {
+					display: block;
+					font-size: 10px;
+					color: #EEAD22;
+					text-align: right;
+					padding-right: 14px;
+				}
+			}
+		}
+	}
+}
