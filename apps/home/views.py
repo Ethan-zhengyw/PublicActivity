@@ -14,6 +14,4 @@ def explore(request):
 
 def host(request):
     activities = md.findConcernedActivities(request.session['email'])
-    tmp = get_template('host.html')
-    html = tmp.render(Context({'activities' : activities}))
-    return HttpResponse(html)
+    return render(request, 'host.html', {'activities': activities})
