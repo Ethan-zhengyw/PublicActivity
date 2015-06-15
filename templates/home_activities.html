@@ -1,0 +1,5 @@
+<div class="activities-template" style="display: block;">
+{% for activity in activities %}
+  {% include 'home_activity.html' with activity=activity %}
+{% endfor %}
+</div>

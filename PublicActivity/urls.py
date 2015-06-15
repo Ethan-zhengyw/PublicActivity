@@ -49,4 +49,7 @@ urlpatterns = patterns('',
     url(r'^css/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.CSS_DIR}),
     url(r'^js/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.JS_DIR}),
     url(r'^img/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.IMG_DIR}),
+
+    url(r'^bootstrap/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.BOOTSTRAP_DIR}),
+    url(r'^jquery/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.JQUERY_DIR}),
 )

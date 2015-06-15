@@ -1,0 +1,296 @@
+#home_wrap {
+  width: 90%;
+  margin: 0 auto;
+  min-width: 1100px;
+}
+#home_wrap .back_to_top {
+  position: fixed;
+  display: none;
+  bottom: 60px;
+  right: 30px;
+  width: 190px;
+  height: 40px;
+  color: white;
+  font-family: "Microsoft YaHei";
+  font-size: 17px;
+  background: #edac36;
+  border: none;
+  outline: none;
+}
+#home_wrap .back_to_top:hover {
+  background: #DB9319;
+}
+#myCarousel {
+  width: 800px;
+  margin: 50px;
+}
+#myCarousel .carousel-control {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  background: url('/images/last.png') center no-repeat;
+  background-size: 40px;
+  padding-right: 4px;
+}
+#myCarousel .carousel-control:hover {
+  opacity: 1;
+  filter: alpha(opacity=90);
+}
+#myCarousel .carousel-control.right {
+  left: auto;
+  right: 0px;
+  padding-left: 9px;
+  background: url('/images/next.png') center no-repeat;
+  background-size: 40px;
+}
+#myCarousel .carousel-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 15px;
+  background: #333333;
+  height: 80px;
+}
+#myCarousel .carousel-indicators {
+  bottom: 0;
+}
+#act_area {
+  width: 870px;
+  margin: 100px;
+  margin-top: 0px;
+  overflow: hidden;
+}
+#act_area #myTab .active a {
+  color: #edac36;
+}
+#act_area .tab-content {
+  border-right: 1px solid #e8e8e8;
+  border-left: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  overflow: hidden;
+  background: white;
+}
+#act_area .tab-content .tag_area {
+  width: 790px;
+  border: 1px solid #e8e8e8;
+  margin: 20px auto;
+}
+#act_area .tab-content .tag_area .tag_chosen {
+  width: 100%;
+  background: #EEEEEE;
+  padding: 7px 0 0 10px;
+  overflow: hidden;
+}
+#act_area .tab-content .tag_area .tag_chosen .title {
+  float: left;
+  width: 80px;
+  margin-top: 3px;
+  margin-bottom: 10px;
+}
+#act_area .tab-content .tag_area .tag_chosen .tag_selected {
+  float: left;
+  background: white;
+  padding: 3px;
+  margin-right: 10px;
+  margin-bottom: 7px;
+}
+#act_area .tab-content .tag_area .tag_chosen .tag_selected .name {
+  margin-right: 10px;
+  cursor: default;
+}
+#act_area .tab-content .tag_area .tag_chosen .tag_selected .tag_close {
+  height: 12px;
+  width: 12px;
+  margin-bottom: 2px;
+  cursor: pointer;
+}
+#act_area .tab-content .tag_area .tag_area_main {
+  padding-bottom: 20px;
+}
+#act_area .tab-content .tag_area .tag_area_main .my_tag,
+#act_area .tab-content .tag_area .tag_area_main .hot_tag {
+  overflow: hidden;
+  padding: 20px 0 0 10px;
+}
+#act_area .tab-content .tag_area .tag_area_main .my_tag .title,
+#act_area .tab-content .tag_area .tag_area_main .hot_tag .title {
+  float: left;
+}
+#act_area .tab-content .tag_area .tag_area_main .my_tag .tag_area_main_wrap,
+#act_area .tab-content .tag_area .tag_area_main .hot_tag .tag_area_main_wrap {
+  overflow: hidden;
+  margin-left: 120px;
+  position: relative;
+}
+#act_area .tab-content .tag_area .tag_area_main .my_tag .tag_area_main_wrap .slide_toggle,
+#act_area .tab-content .tag_area .tag_area_main .hot_tag .tag_area_main_wrap .slide_toggle {
+  position: absolute;
+  right: 10px;
+  font-style: italic;
+  cursor: pointer;
+  width: 30px;
+}
+#act_area .tab-content .tag_area .tag_area_main .my_tag .tag_area_main_wrap .slide_toggle:hover,
+#act_area .tab-content .tag_area .tag_area_main .hot_tag .tag_area_main_wrap .slide_toggle:hover {
+  opacity: 0.5;
+}
+#act_area .tab-content .tag_area .tag_area_main .my_tag .tag_area_main_wrap .slide_tag,
+#act_area .tab-content .tag_area .tag_area_main .hot_tag .tag_area_main_wrap .slide_tag {
+  display: none;
+}
+#act_area .tab-content .tag_area .tag_area_main .my_tag .tag_area_main_wrap .tag,
+#act_area .tab-content .tag_area .tag_area_main .hot_tag .tag_area_main_wrap .tag {
+  width: 130px;
+  float: left;
+}
+#act_area .tab-content .tag_area .tag_area_main .my_tag .tag_area_main_wrap .tag .tag_item,
+#act_area .tab-content .tag_area .tag_area_main .hot_tag .tag_area_main_wrap .tag .tag_item {
+  padding-left: 15px;
+  background: url('/images/checkbox.gif') no-repeat 0 50%;
+  color: #edac36;
+  float: left;
+  cursor: pointer;
+}
+#act_area .tab-content .tag_area .tag_area_main .my_tag .tag_area_main_wrap .tag .tag_item.chosen,
+#act_area .tab-content .tag_area .tag_area_main .hot_tag .tag_area_main_wrap .tag .tag_item.chosen {
+  background: url('/images/checked.png') no-repeat 0 50%;
+}
+#act_area .tab-content .tag_area .tag_area_main .my_tag .tag_area_main_wrap .tag .tag_item:hover,
+#act_area .tab-content .tag_area .tag_area_main .hot_tag .tag_area_main_wrap .tag .tag_item:hover {
+  opacity: 0.7;
+}
+#act_area .tab-content .sort_area {
+  height: 40px;
+  width: 870px;
+  border-bottom: 1px solid #e8e8e8;
+  border-top: 1px solid #e8e8e8;
+  overflow: hidden;
+}
+#act_area .tab-content .sort_area ul {
+  list-style-type: none;
+}
+#act_area .tab-content .sort_area ul li {
+  float: left;
+  height: 40px;
+  width: 120px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+#act_area .tab-content .sort_area ul li .sort {
+  display: block;
+  height: 40px;
+  width: 120px;
+  line-height: 40px;
+  color: #edac36;
+  text-align: center;
+}
+#act_area .tab-content .sort_area ul li .sort:hover {
+  opacity: 0.7;
+}
+#act_area .tab-content .sort_area ul li .sort.active {
+  background: #edac36;
+  color: white;
+}
+#act_area .tab-content .activities-template {
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+#act_area .tab-content .activities-template .acts {
+  float: left;
+  margin: 20px 0 0 30px;
+  width: 180px;
+  height: 290px;
+  box-shadow: 2px 2px 3px #d1d6da;
+}
+#act_area .tab-content .activities-template .acts img {
+  height: 180px;
+  width: 180px;
+}
+#act_area .tab-content .activities-template .acts .acts_info {
+  padding: 5px;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#eeeeee));
+  background: -ms-linear-gradient(top, white, #eeeeee);
+  background: -moz-linear-gradient(top, white, #eeeeee);
+  background: -webkit-linear-gradient(top, white, #eeeeee);
+  background: -o-linear-gradient(top, white, #eeeeee);
+  height: 110px;
+}
+#act_area .tab-content .activities-template .acts .acts_info p {
+  font-family: "Microsoft YaHei";
+  color: black;
+}
+#act_area .tab-content .pagination {
+  float: right;
+  margin-right: 20px;
+}
+#act_area .tab-content .pagination a {
+  color: #edac36;
+}
+#act_area .tab-content .pagination .active a {
+  background: #edac36;
+  border: 1px solid #edac36;
+  color: white;
+}
+#act_area .tab-content .pagination .disabled a {
+  cursor: default;
+  color: #777;
+}
+
+
+body {
+  background-color: #F6F3EB;
+}
+
+#home_wrap {
+  width: 90%;
+  margin: 0 auto;
+  min-width: 1100px;
+}
+
+#myCarousel {
+  width: 800px;
+  margin: 100px;
+  margin-bottom: 50px;
+}
+
+.carousel-inner > .item > img {
+  width: 100%;
+}
+
+#myCarousel .carousel-control.right {
+  left: auto;
+  right: 0px;
+  padding-left: 9px;
+  background: url('/img/home/next.png') center no-repeat;
+  background-size: 40px;
+}
+
+#myCarousel .carousel-control {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  background: url('/img/home/pre.png') center no-repeat;
+  background-size: 40px;
+  padding-right: 4px;
+}
+
+#myCarousel .carousel-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 15px;
+  background: #333333;
+  height: 80px;
+}
+
+#myCarousel .carousel-indicators {
+  bottom: 0;
+}
