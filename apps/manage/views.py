@@ -5,9 +5,9 @@ from django.http import HttpResponseRedirect
 import models as md
 
 def manage(request):
-	activities = md.findNotPassedActivities()
+    activities = md.findNotPassedActivities()
     return render(request, 'manage.html', {'activities': activities})
 
 def setPass(request, aid):
-	md.setPass(aid)
-	return HttpResponseRedirect("/manage")
+    md.setPass(aid)
+    return HttpResponseRedirect("/manage")
