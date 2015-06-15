@@ -1,6 +1,6 @@
 #create_main{
     background-color:rgb(246, 243, 236);
-    padding:30px 50px 50px 50px;
+    padding:30px 80px 50px 80px;
 }
 
 #create_second{
@@ -9,16 +9,89 @@
 }
 
 label{
-    display: inline-block;
     width:80px;
 }
 
-input{
-    border-color:orange;
-    border-radius:8px;
-    margin-bottom:20px;
-} 
-
 .font{
+    border-radius:12px !important;
+    border:1px orange solid !important;
     width:300px;
+}
+
+.form-attr{
+    margin-bottom:20px;
+}
+
+.button{
+    float:right;
+    background:orange !important;
+    color:white !important;
+    width:150px;
+    height:40px;
+    font-size:20px !important;
+}
+
+.bootstrap-tagsinput {
+    width: 300px;
+    border-radius: 12px !important;
+    background-color: #fff;
+    border: 1px #FFA500 solid;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    display: inline-block;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    color: #FFA500;
+    vertical-align: middle;
+    border-radius: 4px;
+    max-width: 100%;
+    line-height: 22px;
+    cursor: text;
+}
+.bootstrap-tagsinput input {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    width: auto !important;
+    max-width: inherit;
+}
+.bootstrap-tagsinput input:focus {
+    border: none;
+    box-shadow: none;
+}
+.bootstrap-tagsinput .tag {
+    margin-right: 2px;
+    color: white;
+}
+.bootstrap-tagsinput .tag [data-role="remove"] {
+    margin-left: 8px;
+    cursor: pointer;
+}
+.bootstrap-tagsinput .tag [data-role="remove"]:after {
+    content: "x";
+    padding: 0px 2px;
+}
+.bootstrap-tagsinput .tag [data-role="remove"]:hover {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.bootstrap-tagsinput .tag [data-role="remove"]:hover:active {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.label-info{
+    background-color: orange !important;
+}
+
+.tagbtn{
+    width:70px;
+    border-radius:12px !important;
+    background: orange !important;
+    color: white !important;
+}
+
+#inputHost{
+    height:150px;
+    width:800px;
 }

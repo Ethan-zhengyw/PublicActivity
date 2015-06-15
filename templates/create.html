@@ -6,49 +6,66 @@
 <p> {{ user.email }} </p>
 
 <link href="./css/create.css" rel="stylesheet" type="text/css" /> 
+<link href="./css/bootstrap.css" rel="stylesheet" type="text/css" /> 
+<script src="./js/jquery-2.0.0.js"></script>
 
 <div id="create_main">
     <div id="create_first">
         <h1>发起活动<h1>
     </div>
     <div id="create_second">
-        <form method="post" action="/service/create">
+        <form class="form-inline" method="post" action="/service/create">
             {% csrf_token %}
-            <label for="name">活动名称</label>
-            <input class="font" type="text" name="name"/> 
-            <br />
-
-            <label for="location">活动地点</label>
-            <input class="font" type="text" name="location"/>
-            <br />
-
-            <label for="introduction">活动介绍</label>
-            <input class="font" type="text" name="introduction"/>
-            <br />
-
-            <label for="host">举办方</label>
-            <input class="font" type="text" name="host"/>
-            <br />
-
-            <label for="tags">活动标签</label>
-            <input type="checkbox" name="tag_teach"/> 支教
-            <input type="checkbox" name="tag_blood"/> 献血
-            <input type="checkbox" name="tag_pe"/> 体育
-            <input type="checkbox" name="tag_music"/> 音乐
-            <input type="checkbox" name="tag_tree"/> 环保
-            <input type="checkbox" name="tag_old"/> 敬老
-            <br />
-
-            <label for="starttime">开始时间</label>
-            <input class="font" type="datetime-local" name="starttime"/> 
-            <br />
-
-            <label for="deadline">截止时间</label>
-            <input class="font" type="text" name="deadline"/> 
-            <br />
-
-            <input type="submit" value="下一步">
+            <div>
+                <div class="form-attr form-group">
+                    <label for="name">活动名称</label>
+                    <input class="font" type="text" name="name"/>
+                </div>
+                <div class="form-attr form-group">
+                    <label for="location">活动地点</label>
+                    <input class="font form-control" type="text" name="location"/>
+                </div>
+                <div class="form-attr form-group">
+                    <label for="host">举办方</label>
+                    <input class="font form-control" type="text" name="host"/>
+                </div>
+                <div class="form-attr form-group">
+                    <label for="starttime">开始时间</label>
+                    <input id="inputTime" class="font form-control" type="datetime-local" name="starttime"/>
+                </div>
+                <div class="form-attr form-group">
+                    <label for="deadline">截止时间</label>
+                    <input class="font form-control" type="datetime-local" name="deadline"/>
+                </div>
+                <div class="form-attr form-group">
+                    <label for="tags">活动标签</label>
+                    <input id="inputTags" class="font form-control" type="text" value="" data-role="tagsinput"/> 
+                    <br />
+                    <label></label>
+                    <button type="button" class="tagbtn btn-addTag btn btn-default">支教</button>
+                    <button type="button" class="tagbtn btn-addTag btn btn-default">献血</button>
+                    <button type="button" class="tagbtn btn-addTag btn btn-default">体育</button>
+                    <button type="button" class="tagbtn btn-addTag btn btn-default">学术</button>
+                    <button type="button" class="tagbtn btn-addTag btn btn-default">音乐</button>
+                    <button type="button" class="tagbtn btn-addTag btn btn-default">环保</button>
+                    <button type="button" class="tagbtn btn-addTag btn btn-default">敬老</button>
+                    <button type="button" class="tagbtn btn-addTag btn btn-default">宣传</button>
+                    <button type="button" class="tagbtn btn-addTag btn btn-default">募捐</button>
+                    <button type="button" class="tagbtn btn-addTag btn btn-default">慈善</button>
+                    <button type="button" class="tagbtn btn-addTag btn btn-default">孤儿院</button>
+                </div>
+                <div class="form-attr form-group">
+                    <label for="indivoduction">活动介绍</label>
+                    <textarea id="inputHost"  required="" class="font form-control"></textarea>
+                </div>
+            </div>
         </form>
         </div>
+        <br />
+        <button class="button btn btn-default" type="submit">下一步</button>
     </div>
-    {% endblock %}
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/bootstrap-tagsinput.js"></script>
+<script src="./js/create.js"></script>
+<script src="./js/layout.js"></script>
+{% endblock %}
