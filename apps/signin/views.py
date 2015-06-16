@@ -21,5 +21,6 @@ def s_signin(request):
 
 def logout(request):
 	del request.session['email']
-	del request.session['user_type']
+	del request.session['username']
+	del request.session['avatar']
 	return HttpResponse("{}")	

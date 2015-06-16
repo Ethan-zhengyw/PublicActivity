@@ -8,8 +8,11 @@ def explore(request):
     # tmp = get_template('home.html')
     # html = tmp.render(Context({'activities' : activities}))
     # return HttpResponse(html)
-
-    return render(request, 'home.html', {'activities': activities, "user": request.session['username']})
+    if 'username' in request.session:
+        username = request.session['username']
+    else:
+        username = None
+    return render(request, 'home.html', {'activities': activities, "user": username})
 
 
 def host(request):
