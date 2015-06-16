@@ -21,6 +21,7 @@ def host(request):
     if 'username' in request.session:
         username = request.session['username']
         avatar = request.session['avatar']
+        email = request.session['email']
     else:
         username = None
         avatar = None
@@ -32,5 +33,6 @@ def host(request):
         'acts_par': acts_par,
         'acts_cre': acts_cre,
         "avatar": avatar,
+        'email': email,
         'user': username,
     })
