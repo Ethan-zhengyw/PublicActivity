@@ -3,7 +3,8 @@
 	<a href="/home">发现活动</a>
 	<a href="/host">我的活动</a>
 	{% if user %} 
-		<a class="addActivity" href="create"> + </a>
+		<a class="addActivity" href="/create"> + </a>
+    <img src="{{ user.avatar }}">
 		<a class="profile" href="#">{{user}}</a>
 		<ul class="hidden_menu">
 			<li><a href="/setting">设置</a></li>

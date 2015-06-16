@@ -7,7 +7,7 @@
       </div>
     </a>
     <div class="acts_info">
-      <a href="/details/{{ activity.post }}">
+      <a href="/details/{{ activity.id }}">
         <div class="p_message">
           <p class="act_title">{{ activity.name }}</p>
           <p>{{ activity.start_time }}</p>
@@ -16,10 +16,9 @@
           <p>0 人关注    0 人参加</p>
         </div>
       </a>
-      <div class="edit">
-        <a href="/details/{{ activity}}"></a>
+      <span class="edit">
         <a target="_blank" href="/edit/{{ activity.id }}">编辑</a>
-      </div>
+      </span>
     </div>
   </div>
   {% endfor %}

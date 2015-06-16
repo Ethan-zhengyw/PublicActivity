@@ -103,11 +103,14 @@
   padding: 0 0 10px 0;
 }
 #act_area .tab-content .activities-template .acts .acts_info .edit {
-  float: left;
+  float: right;
+  margin: 10px;
   height: 30px;
   width: 60px;
   background-color: #EEAD23;
   text-align: center;
+  position: relative;
+  top: -50px;
 }
 #act_area .tab-content .activities-template .acts .acts_info .edit a {
   line-height: 30px;
