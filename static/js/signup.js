@@ -1,7 +1,9 @@
 $(document).ready(function() {
 	// 获取点击注册前的页面地址，藏在hash中
 	var url = window.location.hash.split('#')[1];
-	
+	if (window.location.hash == "") {
+		url = '/home';
+	}
 	// 检查邮箱是否有误
 	$('#register_email').focusout(function() {
 		// 不是邮箱格式就提示
@@ -30,11 +32,8 @@ $(document).ready(function() {
 								 'csrfmiddlewaretoken': csrftoken
 					},
 					success: function(data) {
-						alert(data);
 						var obj = eval("("+data+")");
-						alert(obj);
 						if (parseInt(obj['status']) === 1) {
-							alert('a');
 							$(this).removeClass('active');
 							$(this).next().next().addClass('active');
 							$('.bubble').eq(2).addClass('active');
@@ -123,15 +122,10 @@ function checkEmail(str) {
 				url: 'checkEmail',
 				successs: function(data) {
 					if (!data) {
-						alert('b');
 						$('#register_email').val('').attr('placeholder', '邮箱已被注册~');
 					} else {
-						alert('a');
 						return true;
 					}
-				},
-				fail: function(data) {
-					alert(data);
 				}
 
 			});

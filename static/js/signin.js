@@ -1,7 +1,9 @@
 $(document).ready(function() {
 	// 获取点击注册前的页面地址，藏在hash中
 	var url = window.location.hash.split('#')[1];
-
+	if (window.location.hash == "") {
+		url = '/home';
+	}
 	$('#login_form').submit(function(event) {
 		event.preventDefault();
 		var flag = true;
