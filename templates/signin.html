@@ -4,8 +4,6 @@
 
 {% block content %}
 	<link rel="stylesheet/less" type="text/css" href="/css/signin.less">
-	<script src="/js/jquery-1.11.1.min.js"></script>
-	<script src="/js/signin.js"></script>
 
 	<div id="content">
 		<div id="wrap">
@@ -13,21 +11,21 @@
 				<img src="/img/login.jpg" alt="login_jpg" />
 			</div>
 			<div>
-				<form id="login_form" autocomplete="off" method="post" url="service/signin">
+				<form id="login_form" autocomplete="off" >
 
 					<span>登录 Login</span>
 					<img src="/img/user.png">
-					<input type="text" name="email" placeholder="user_email" />
+					<input type="text" id="email" name="email" placeholder="user_email" />
 					<span> *</span>
 					<img src="/img/password.png">
-					<input type="password" name="password" placeholder="user_password" />
+					<input type="password" id="password" name="password" placeholder="user_password" />
 					<span> *</span>
 					<input type="submit" value="登 录" />
-          				<!-- {% csrf_token %} -->
 				</form>
-				<a href="signup.html">还没有账号？点击注册</a>
+				<a href="signup">还没有账号？点击注册</a>
 			</div>
 		</div>
 	</div>
 
+	<script src="/js/signin.js"></script>
 {% endblock %}

@@ -1,14 +1,16 @@
-body, div, form, p, input {margin: 0; padding: 0}
+body, div, form, p, input, ul, li {margin: 0; padding: 0}
 a {text-decoration: none}
 * {font-family: "Microsoft Yahei"}
-
+li {list-style-type: none}
 @label_color: rgb(204, 204, 204);
 @whole_color: #EEAD22;
 
 
-#header {
+#header_nav {
+	position: relative;
 	width: 68%;
-	padding-top: 30px;
+	height: 30px;
+	padding-top: 20px;
 	padding-bottom: 30px;
 	padding-left: 16%;
 	padding-right: 16%;
@@ -33,6 +35,29 @@ a {text-decoration: none}
 	a.profile, a.addActivity {
 		float: right;
 		line-height: 43px;
+	}
+
+	.hidden_menu {
+		display: none;
+		&.active {
+			display: block;
+			width: 100px;
+		}
+		li {
+			width: 150px;
+			text-align: center;
+			color: #fff;
+			line-height: 20px;
+			margin-top: 1px;
+			background-color: @whole_color;
+			cursor: pointer;
+			a {
+				font-size: 15px;
+			}
+			&:hover a {
+				font-size: 20px;
+			}
+		}
 	}
 }
 
