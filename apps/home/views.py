@@ -9,7 +9,7 @@ def explore(request):
     # html = tmp.render(Context({'activities' : activities}))
     # return HttpResponse(html)
 
-    return render(request, 'home.html', {'activities': activities})
+    return render(request, 'home.html', {'activities': activities, "user": request.session['username']})
 
 
 def host(request):

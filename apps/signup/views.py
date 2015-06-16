@@ -5,7 +5,7 @@ import models as md
 
 def validEmail(email):
     emailPattern = re.compile(r"\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}\b", re.IGNORECASE)
-    match = pattern.findall(password)
+    match = emailPattern.findall(email)
     if match:
         return True
     return False

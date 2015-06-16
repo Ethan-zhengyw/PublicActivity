@@ -12,7 +12,8 @@ def s_signin(request):
 		user = md.check(email, password)
 		if user:
 			request.session['email'] = email
-			request.session['user_type'] = user.user_type
+			request.session['username'] = user.username
+			request.session['avatar'] = user.avatar
 			return HttpResponse("{'status': '1'}")
 		else:
 			return HttpResponse("{'status': '0', 'message' : 'Login Error'}")
