@@ -18,17 +18,23 @@ $(document).ready(function() {
 				$('#register_tages').next().find('input').attr('placeholder', '别忘记这里.....');
 				event.preventDefault();
 			} else {
+				var csrftoken = getCookie('csrftoken');
 				$.ajax({
 					type: "post",
 					url: "service/signup",
-					data: {		 email: $('#register_email').val(),
-								 username: $('#register_userName').val(),
-								 gender: $('input[name="register_gender"]').val(),
-								 password: $('#register_password').val(),
-								 tags: $("#register_tages").val()
+					data: {		 'email': $('#register_email').val(),
+								 'username': $('#register_userName').val(),
+								 'gender': $('input[name="register_gender"]').val(),
+								 'password': $('#register_password').val(),
+								 'tags': $("#register_tages").val(),
+								 'csrfmiddlewaretoken': csrftoken
 					},
-					successs: function(data) {
-						if (data) {
+					success: function(data) {
+						alert(data);
+						var obj = eval("("+data+")");
+						alert(obj);
+						if (parseInt(obj['status']) === 1) {
+							alert('a');
 							$(this).removeClass('active');
 							$(this).next().next().addClass('active');
 							$('.bubble').eq(2).addClass('active');
@@ -37,15 +43,15 @@ $(document).ready(function() {
 							$('.form_s').eq(2).addClass('active');
 						} else {
 							alert('something wrong happened~');
-							location.href = 'register';
+							location.href = '/register';
 						}
 					}
 				});
 			}
  		} else {
  			var flag = true;
- 			if (!checkEmail($('#register_email').val()))
- 				return;
+ 			// if (!checkEmail($('#register_email').val()))
+ 			// 	return;
  			// 第一个注册页面,先判断是否留空
  			$('#form_1').find('input').each(function(index, domEle) {
  				if ($(domEle).val() == "") {
