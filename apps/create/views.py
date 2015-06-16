@@ -8,6 +8,11 @@ def create(request):
     return render(request, 'create.html', {'user': 'Ethan'})
 
 def s_create(request):
+
+    if 'email' not in request.session:
+        return HttpResponse("需要登录后才能发布活动")
+
+
     print 'creating activity'
 
     name = request.POST['name']
@@ -29,7 +34,7 @@ def s_create(request):
     tags = [tagsDict[key] for key in tagsDict if key in request.POST]
     print tags
 
-    md.addActivity(name, location, introduction, host, create_time, start_time, deadline, creater_id, tags)
+    # md.addActivity(name, location, introduction, host, create_time, start_time, deadline, creater_id, tags)
     # if 'email' in request.POST and 'password' in request.POST and 'confirmPwd' in request.POST and "user_type" in request.POST:
     #     email = request.POST['email']
     #     password = request.POST['password']

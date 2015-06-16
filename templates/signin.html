@@ -1,44 +1,31 @@
-<!DOCTYPE html>
-<head>
-	<title>login</title>
-	<meta charset="UTF-8">
-	<link rel="stylesheet/less" type="text/css" href="login.less">
-	<script src="jquery-1.11.1.min.js"></script>
-	<!--script>
-	//   less = {
-	//     env: "development",
-	//     async: false,
-	//     fileAsync: false,
-	//     poll: 1000,
-	//     functions: {},
-	//     dumpLineNumbers: "comments",
-	//     relativeUrls: false,
-	//     // rootpath: ":/a.com/"
-	//   };
-	// </script-->
-	<script src="Less.js"></script>
-	<script src="login.js"></script>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Sign in{% endblock %}
+
+{% block content %}
+	<link rel="stylesheet/less" type="text/css" href="/css/signin.less">
+
 	<div id="content">
 		<div id="wrap">
 			<div>
-				<img src="login.jpg" alt="login_jpg" />
+				<img src="/img/login.jpg" alt="login_jpg" />
 			</div>
 			<div>
-				<form id="login_form" autocomplete="off" method="post" url="">
+				<form id="login_form" autocomplete="off" >
+
 					<span>登录 Login</span>
-					<img src="user.png">
-					<input type="text" name="user_email" placeholder="user_email" />
+					<img src="/img/user.png">
+					<input type="text" id="email" name="email" placeholder="user_email" />
 					<span> *</span>
-					<img src="password.png">
-					<input type="password" name="user_passward" placeholder="user_password" />
+					<img src="/img/password.png">
+					<input type="password" id="password" name="password" placeholder="user_password" />
 					<span> *</span>
 					<input type="submit" value="登 录" />
 				</form>
-				<a href="signUp.html">还没有账号？点击注册</a>
+				<a href="signup">还没有账号？点击注册</a>
 			</div>
 		</div>
 	</div>
-</body>
-</html>
+
+	<script src="/js/signin.js"></script>
+{% endblock %}

@@ -1,0 +1,63 @@
+p,ul,li,button,input,img,div,td,tr,table{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  background: #f6f3eb;
+}
+
+.c-title{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+#c-activty{
+	margin-top: 50px;
+}
+
+.c-table_div{
+	float: left;
+}
+
+.tr1{
+	height: 50px;
+}
+
+.tr2{
+	height: 148px;
+}
+
+#bb1{
+	color: white;
+	font-size: 5px;
+	font-weight: bold;
+	padding: 5px;
+	background-color: #FFA042;
+}
+
+#bb2{
+	color: white;
+	font-size: 5px;
+	font-weight: bold;
+	padding: 5px;
+	background-color: #FFA042;
+}
+
+.dkey{
+	width: 150px;
+}
+
+.c-table td{
+	width: 150px;
+	height: 50px;
+}
+
+.c-img{
+	display: inline-block;
+	float: left;
+}
+
+#actsviews {
+  width: 200px !important;
+}

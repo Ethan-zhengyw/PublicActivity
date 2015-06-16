@@ -13,5 +13,13 @@ def explore(request):
 
 
 def host(request):
-    activities = md.findConcernedActivities(request.session['email'])
-    return render(request, 'host.html', {'activities': activities})
+
+    # activities = md.findConcernedActivities(request.session['email'])
+    user = md.findCurrentUser('123@123.com')
+    acts_con, acts_par, acts_cre = md.findConcernedActivities('123@123.com')
+    return render(request, 'host.html', {
+        'acts_con': acts_con,
+        'acts_par': acts_par,
+        'acts_cre': acts_cre,
+        'user': user
+    })

@@ -1,0 +1,130 @@
+#host_wrap {
+  width: 90%;
+  margin: 0 auto;
+  min-width: 1100px;
+}
+#host_img {
+  position: absolute;
+  top: 160px;
+  left: 1100px;
+}
+#host_img img {
+  height: 567px;
+}
+#user_message {
+  width: 870px;
+  margin: 50px;
+  margin-left: 200px;
+}
+#user_message .acts_img {
+  float: left;
+}
+#user_message .acts_img img {
+  height: 240px;
+  width: 240px;
+}
+#user_message .user_message_text {
+  float: left;
+  margin: 0px 0 0 60px;
+  background: white;
+  width: 570px;
+  height: 240px;
+}
+#user_message .user_message_text p {
+  text-align: left;
+  font-family: "Microsoft YaHei";
+  color: black;
+  padding: 0 0 5px 20px;
+}
+#user_message .user_message_text .user_name {
+  font-size: 20pt;
+  padding: 20px 0 10px 20px;
+}
+#act_area {
+  width: 869px;
+  margin: 50px;
+  margin-left: 200px;
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid #EEEEEE;
+}
+#act_area #myTab .active a {
+  color: #edac36;
+  background-color: white;
+}
+#act_area #myTab .act_type {
+  width: 289px;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+  font-family: "Microsoft YaHei";
+  color: black;
+  background-color: #EEEEEE;
+}
+#act_area .tab-content .activities-template {
+  overflow: hidden;
+}
+#act_area .tab-content .activities-template .acts {
+  float: left;
+  margin: 0 0 0 0;
+  width: 866px;
+  height: 270px;
+  border-bottom: 1px solid #e8e8e8;
+  border-right: 2px solid #e8e8e8;
+  border-left: 1px solid #e8e8e8;
+}
+#act_area .tab-content .activities-template .acts .acts_img {
+  margin: 60px 0 0 60px;
+  float: left;
+}
+#act_area .tab-content .activities-template .acts .acts_img img {
+  height: 180px;
+  width: 180px;
+}
+#act_area .tab-content .activities-template .acts .acts_info {
+  float: left;
+  margin: 60px 0 0 60px;
+  background: white;
+  width: 550px;
+  height: 180px;
+}
+#act_area .tab-content .activities-template .acts .acts_info .p_message {
+  float: left;
+  width: 490px;
+  height: 180px;
+}
+#act_area .tab-content .activities-template .acts .acts_info .p_message p {
+  text-align: left;
+  font-family: "Microsoft YaHei";
+  color: black;
+}
+#act_area .tab-content .activities-template .acts .acts_info .p_message .act_title {
+  font-size: 20pt;
+  padding: 0 0 10px 0;
+}
+#act_area .tab-content .activities-template .acts .acts_info .edit {
+  float: left;
+  height: 30px;
+  width: 60px;
+  background-color: #EEAD23;
+  text-align: center;
+}
+#act_area .tab-content .activities-template .acts .acts_info .edit a {
+  line-height: 30px;
+  padding: 0px;
+  color: white;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+}
+#act_area .tab-content .pagination {
+  float: right;
+  margin-right: 20px;
+}
+#act_area .tab-content .pagination a {
+  color: #edac36;
+}
+#act_area .tab-content .pagination .active a {
+  background: #edac36;
+  border: 1px solid #edac36;
+  color: white;
+}

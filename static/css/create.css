@@ -1,6 +1,11 @@
+body {
+  background-color:rgb(246, 243, 236);
+}
 #create_main{
     background-color:rgb(246, 243, 236);
     padding:30px 80px 50px 80px;
+    width: 960px;
+    margin: auto;
 }
 
 #create_second{
@@ -98,4 +103,7 @@ label{
 
 .activity_1{
     vertical-align:top;
+}
+
+#submit {
 }

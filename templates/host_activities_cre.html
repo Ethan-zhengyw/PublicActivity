@@ -1,0 +1,36 @@
+<div class="activities-template">
+  {% for activity in activities %}
+  <div class="acts">
+    <a href="/details/{{ activity.id }}">
+      <div class="acts_img">
+        <img src="{{ activity.post }}" alt="活动封面">
+      </div>
+    </a>
+    <div class="acts_info">
+      <a href="/details/{{ activity.post }}">
+        <div class="p_message">
+          <p class="act_title">{{ activity.name }}</p>
+          <p>{{ activity.start_time }}</p>
+          <p>{{ activity.location }}</p>
+          <p></p>
+          <p>0 人关注    0 人参加</p>
+        </div>
+      </a>
+      <div class="edit">
+        <a href="/details/{{ activity}}"></a>
+        <a target="_blank" href="/edit/{{ activity.id }}">编辑</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<ul class="pagination">
+  <li><a href="#" data-id="0" class="paging">«</a></li>
+  <li class="active"><a href="#" data-id="1" class="paging">1</a></li>
+  <li><a href="#" data-id="2" class="paging">2</a></li>
+  <li><a href="#" data-id="3" class="paging">3</a></li>
+  <li><a href="#" data-id="4" class="paging">4</a></li>
+  <li><a href="#" data-id="5" class="paging">5</a></li>
+  <li><a href="#" data-id="-1" class="paging">»</a></li>
+</ul>

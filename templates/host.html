@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}我的活动{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.non-wrap {
+  white-space:nowrap;
+}
+.user_info {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.user_image_float {
+  margin:80px; 
+  float:left;
+}
+</style>
+<link href="/css/home/bootstrap.min.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="/css/home/home.css">
+<link type="text/css" rel="stylesheet" href="/css/home/host.css">
+<link type="text/css" rel="stylesheet" href="/css/home/layout.css">
+<div id="home_wrap">
+    <div id="user_message">
+      <div class="acts_img">
+        <img src="{{ user.avatar }}" alt="头像">
+      </div>
+      <div class="user_message_text">
+        <p class="user_name">{{ user.username }}</p>
+        <p>邮箱：{{ user.email }}</p>
+        <p>手机：xxxxxxxxxxx</p>
+        <p>qq号：xxxxxxxxxxx</p>
+        <p>微信：xxxxxxxxxxx</p>
+      </div>
+    </div>
+
+    
+<div id="act_area">
+ {% include 'host_activities.html' with acts_con=acts_con acts_par=acts_par acts_cre=acts_cre %}
+</div>
+
+</div>
+
+<script src="/js/home/home.js"> </script>
+<script src="/js/home/host.js"> </script>
+<script src="/js/layout.js"> </script>
+<script src="/js/home/jquery.min.js"></script>
+<script src="/js/home/bootstrap.min.js"></script>
+{% endblock %}

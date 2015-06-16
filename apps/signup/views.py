@@ -22,8 +22,8 @@ def signup(request):
 
 def checkUsedEmail(request):
     if 'email' in request.POST:
+        email = request.POST['email']
         if md.checkEmail(email):
-            md.addUser(email, password, user_type)
             return HttpResponse("{'status': '1'}")
         else:
             return HttpResponse("{'status': '0', 'message' : 'Email already in use'}")

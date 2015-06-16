@@ -1,0 +1,10 @@
+{% extends 'my_items_activities.html' %}
+{% block item_context %}
+<div class="acts_info">
+  <h2>{{ activity.name }}</h2>
+  <p>{{ activity.start_time }}</p>
+  <p>{{ activity.location }}</p>
+  <p>{{ activity.host }}</p>
+  <p>{{ activity.concern }}关注 {{ activity.participate }}参加</p>
+</div>
+{% endblock %}

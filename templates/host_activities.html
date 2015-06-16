@@ -1,0 +1,27 @@
+  <ul id="myTab" class="nav nav-tabs">
+    <li data-id="future" class="act_type active">
+      <a href="#future">我关注的 1</a>
+    </li>
+    <li data-id="past" class="act_type">
+      <a href="#past">我参加的 2</a>
+    </li>
+    <li data-id="all" class="act_type">
+      <a href="#all">我发起的 2</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+
+    <div id="future" class="tab-pane fade active in">
+        {% include 'host_activities_con.html' with activities=acts_con %}
+    </div>
+
+    <div id="past" class="tab-pane fade">
+        {% include 'host_activities_par.html' with activities=acts_par %}
+    </div>
+
+    <div id="all" class="tab-pane fade">
+        {% include 'host_activities_cre.html' with activities=acts_cre %}
+    </div>
+
+  </div>
