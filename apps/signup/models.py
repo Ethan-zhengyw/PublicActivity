@@ -1,9 +1,10 @@
 from model.user import *
 
 def addUser(email, password, gender, username, tags):
+	defaultAvatar = "/img/default_avatar.png"
 	p = User(email=email, password=md5HashPwd(password),
 			username=username, tags=tags,
-			gender=gender)
+			gender=gender, avatar=defaultAvatar)
 	p.save()
 
 def checkEmail(email):

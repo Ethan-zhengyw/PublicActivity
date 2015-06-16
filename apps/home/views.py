@@ -10,9 +10,11 @@ def explore(request):
     # return HttpResponse(html)
     if 'username' in request.session:
         username = request.session['username']
+        avatar = request.session['avatar']
     else:
         username = None
-    return render(request, 'home.html', {'activities': activities, "user": username})
+        avatar = None
+    return render(request, 'home.html', {'activities': activities, "user": username, "avatar": avatar})
 
 
 def host(request):
