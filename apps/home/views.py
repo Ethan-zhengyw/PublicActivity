@@ -8,18 +8,24 @@ def explore(request):
     # tmp = get_template('home.html')
     # html = tmp.render(Context({'activities' : activities}))
     # return HttpResponse(html)
-
-    return render(request, 'home.html', {'activities': activities, "user": request.session['username']})
+    if 'username' in request.session:
+        username = request.session['username']
+    else:
+        username = None
+    return render(request, 'home.html', {'activities': activities, "user": username})
 
 
 def host(request):
-
-    # activities = md.findConcernedActivities(request.session['email'])
-    user = md.findCurrentUser('123@123.com')
-    acts_con, acts_par, acts_cre = md.findConcernedActivities('123@123.com')
+    if 'username' in request.session:
+        username = request.session['username']
+    else:
+        username = None
+        return HttpResponseRedirect('/home')
+    # user = md.findCurrentUser(request.session['email'])
+    acts_con, acts_par, acts_cre = md.findConcernedActivities(request.session['email'])
     return render(request, 'host.html', {
         'acts_con': acts_con,
         'acts_par': acts_par,
         'acts_cre': acts_cre,
-        'user': user
+        'user': username,
     })
