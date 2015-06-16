@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}我的活动{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.non-wrap {
+  white-space:nowrap;
+}
+.user_info {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.user_image_float {
+  margin:80px; 
+  float:left;
+}
+</style>
+<link href="/css/home/bootstrap.min.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="/css/home/home.css">
+<link type="text/css" rel="stylesheet" href="/css/home/layout.css">
+<div id="home_wrap">
+  <div id="act_area">
+    <div class="user_info">
+      <div class="user_image_float">
+        <img src="{% if user.avatar %}
+                      {{ user.avatar }}
+                   {% else %}
+                      /img/user.png
+                   {% endif %}" alt="用户头像"/>
+      </div>
+      <div>
+        <h2>{% if user.username %}
+                            {{ user.username }}
+                         {% else %}
+                            未设置
+                         {% endif %}<img src="#"/></h2>
+        <img src="#"/><p>{% if user.email %}
+                            {{ user.email }}
+                         {% else %}
+                            未设置
+                         {% endif %}
+                      </p>
+        <img src="#"/><p>{% if user.qq %}
+                            {{ user.qq }}
+                         {% else %}
+                            未设置
+                         {% endif %}
+                      </p>
+        <img src="#"/><p>{% if user.weixin %}
+                            {{ user.weixin }}
+                         {% else %}
+                            未设置
+                         {% endif %}
+                      </p>
+        <img src="#"/><div class="non-wrap">{% for tag in user.tags %}<p>{{ tag }}</p>{% endfor %}</div>
+      </div>
+    </div>
+    <ul id="myTab" class="nav nav-tabs">
+      <li data-id="future" class="timing active"><a href="#future" data-toggle="tab">我关注的</a></li>
+      <li data-id="past" class="timing"><a href="#past" data-toggle="tab">我参加的</a></li>
+      <li data-id="all" class="timing"><a href="#all" data-toggle="tab">我发起的</a> </li>
+    </ul>
+    <div class="tab-content">
+      <div id="future" class="tab-pane fade active in">
+        {% include 'my_concern_activities.html' with activities=activities %}
+      </div>
+      <div id="past" class="tab-pane fade">
+        {% include 'my_participate_activities.html' with activities=activities %}
+      </div>
+      <div id="all" class="tab-pane fade">
+        {% include 'my_create_activities.html' with activities=activities %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/home.js"> </script>
+<script src="/js/layout.js"> </script>
+<script src="/js/home/jquery.min.js"></script>
+<script src="/js/home/bootstrap.min.js"></script>
+{% endblock %}
