@@ -3,7 +3,11 @@ from django.http import HttpResponseRedirect, HttpResponse
 import models as md
 
 def signin(request):
-	return render(request, 'signin.html', {'user': 'Ethan'})
+	if 'username' in request.session:
+		username = request.session['username']
+	else:
+		username = None
+	return render(request, 'signin.html', {'user': username})
 
 def s_signin(request):
 	if 'email' in request.POST and 'password' in request.POST:

@@ -18,7 +18,11 @@ def validPassword(password):
     return False
 
 def signup(request):
-    return render(request, 'signup.html', {'user': 'Ethan'})
+    if 'username' in request.session:
+        username = request.session['username']
+    else:
+        username = None
+    return render(request, 'signup.html', {'user': username})
 
 def checkUsedEmail(request):
     if 'email' in request.POST:
