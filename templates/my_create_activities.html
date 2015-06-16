@@ -1,0 +1,26 @@
+{% extends 'my_items_activities.html' %}
+{% block item_context %}
+<div class="acts_info">
+  <div>
+	  <div class="non-wrap"><h2>{{ activity.name }}</h2>
+	  	<p>
+	  		{% if activity.isPass == 0 %}
+	  		(审核中)
+	  		{% else %}
+	  		{% if activity.isPass == 1 %}
+	  		(已通过)
+	  		{% else %}
+	  		(未通过)
+	  		{% endif %}
+	  		{% endif %}
+	  	</p>
+	  </div>
+	  <p>{{ activity.start_time }}</p>
+	  <p>{{ activity.host }}</p>
+  </div>
+  <div>
+  	<a href="#">编辑</a>
+  	<p>发起时间: {{ activity.create_time }}</p>
+  </div>
+</div>
+{% endblock %}
