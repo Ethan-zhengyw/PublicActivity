@@ -294,3 +294,35 @@ body {
 #myCarousel .carousel-indicators {
   bottom: 0;
 }
+
+#user_message {
+  width: 960px;
+  margin: 50px;
+  margin-left: 0;
+  overflow: hidden;
+  float: left;
+}
+#user_message .acts_img {
+  float: left;
+}
+#user_message .acts_img img {
+  height: 240px;
+  width: 240px;
+}
+#user_message .user_message_text {
+  float: left;
+  margin: 0px 0 0 60px;
+  background: white;
+  width: 570px;
+  height: 240px;
+}
+#user_message .user_message_text p {
+  text-align: left;
+  font-family: "Microsoft YaHei";
+  color: black;
+  padding: 0 0 5px 20px;
+}
+#user_message .user_message_text .user_name {
+  font-size: 20pt;
+  padding: 20px 0 10px 20px;
+}
