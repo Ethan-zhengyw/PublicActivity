@@ -11,10 +11,10 @@ def validEmail(email):
     return False
 
 def validPassword(password):
-    pattern = re.compile(r'([^a-z0-9A-Z])+')
+    pattern = re.compile(r'([a-z0-9A-Z])+')
     match = pattern.findall(password)
     if match:
-        return len(password) > 8
+        return True
     return False
 
 def signup(request):
@@ -31,7 +31,7 @@ def checkUsedEmail(request):
 
 def s_signup(request):
     if 'email' in request.POST and 'username' in request.POST and 'password' in request.POST and 'tags' in request.POST and 'gender' in request.POST:
-        gender = request.POST['gender']
+        gender = int(request.POST['gender'])
         tags = request.POST['tags']
         username = request.POST['username']
         email = request.POST['email']
@@ -42,5 +42,10 @@ def s_signup(request):
                 return HttpResponse("{'status': '1'}")
             else:
                 return HttpResponse("{'status': '0', 'message' : 'Email already in use'}")
+        else:
+            if not validEmail(email):
+                print "email"
+            if not validPassword(password):
+                print "password"
     return HttpResponse("{}")
 
