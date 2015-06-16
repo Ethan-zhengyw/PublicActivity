@@ -1,12 +1,16 @@
-<div id="header">
+<div id="header_nav">
 	<h1>ACtivett</h1>
-	<a href="discover">发现活动</a>
-	<a href="mine">发现活动</a>
+	<a href="/home">发现活动</a>
+	<a href="/host">我的活动</a>
 	{% if user %} 
-		<a class="addActivity" href="addActivity">+</a>
-		<a class="profile" href="profile">{{user}}</a>
+		<a class="addActivity" href="create"> + </a>
+		<a class="profile" href="#">{{user}}</a>
+		<ul class="hidden_menu">
+			<li><a href="/setting">设置</a></li>
+			<li><a href="/logout">退出</a></li>
+		</ul>
 	{% else %}
-		<a class="addActivity" href="signUp.html">注册</a>
-		<a class="profile" href="login.html">登录</a>
+		<a class="addActivity storeUrl" href="/signup">注册</a>
+		<a class="profile storeUrl" href="/signin">登录</a>
 	{% endif %}
 </div >
