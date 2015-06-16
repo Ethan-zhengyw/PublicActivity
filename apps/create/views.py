@@ -5,7 +5,14 @@ import datetime
 import models as md
 
 def create(request):
-    return render(request, 'create.html', {'user': 'Ethan'})
+    if 'username' in request.session:
+        username = request.session['username']
+        avatar = request.session['avatar']
+    else:
+        username = None
+        avatar = None
+        return HttpResponseRedirect('/home')
+    return render(request, 'create.html', {'user': username, "avatar": avatar})
 
 def s_create(request):
 
