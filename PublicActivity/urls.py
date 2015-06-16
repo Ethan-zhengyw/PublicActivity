@@ -37,14 +37,15 @@ urlpatterns = patterns('',
 
     url(r'^details/(\w+)$', 'details.views.details', name='details'),    # 公益活动详情页面
 
-    url(r'^server/(?P<aid>\w+)/follow$', 'details.views.follow', name='follow'),      # 关注
-    url(r'^server/(?P<aid>\w+)/unfollow$', 'details.views.unfollow', name='unfollow'),   # 取消关注
+    url(r'^service/(?P<aid>\w+)/follow$', 'details.views.follow', name='follow'),      # 关注
+    url(r'^service/(?P<aid>\w+)/unfollow$', 'details.views.unfollow', name='unfollow'),   # 取消关注
 
-    url(r'^server/(?P<aid>\w+)/join$', 'details.views.join', name='join'),      # 关注
-    url(r'^server/(?P<aid>\w+)/unjoin$', 'details.views.unjoin', name='unjoin'),   # 取消关注
+    url(r'^service/(?P<aid>\w+)/join$', 'details.views.join', name='join'),      # 关注
+    url(r'^service/(?P<aid>\w+)/unjoin$', 'details.views.unjoin', name='unjoin'),   # 取消关注
 
-    url(r'^manage$', 'manage.views.manage', name='manage'),
-    url(r'^manage/(\w+)$', 'manage.views.setPass', name='setPass'),
+    url(r'^manager$', 'manager.views.manager', name='manager'),
+    url(r'^service/setPass/(\w+)$', 'manager.views.setPass', name='setPass'),
+    url(r'^service/setFailPass/(\w+)$', 'manager.views.setFailPass', name='setFailPass'),
 
     url(r'^admin/', include(admin.site.urls)),
 
