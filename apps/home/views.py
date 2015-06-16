@@ -16,13 +16,16 @@ def explore(request):
 
 
 def host(request):
-
-    # activities = md.findConcernedActivities(request.session['email'])
-    user = md.findCurrentUser('123@123.com')
-    acts_con, acts_par, acts_cre = md.findConcernedActivities('123@123.com')
+    if 'username' in request.session:
+        username = request.session['username']
+    else:
+        username = None
+        return HttpResponseRedirect('/home')
+    # user = md.findCurrentUser(request.session['email'])
+    acts_con, acts_par, acts_cre = md.findConcernedActivities(request.session['email'])
     return render(request, 'host.html', {
         'acts_con': acts_con,
         'acts_par': acts_par,
         'acts_cre': acts_cre,
-        'user': user
+        'user': username,
     })
