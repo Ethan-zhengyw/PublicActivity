@@ -1,8 +1,8 @@
 from model.user import *
 
-def addUser(email, password, usertype, gender, username, tags):
+def addUser(email, password, gender, username, tags):
 	p = User(email=email, password=md5HashPwd(password),
-			user_type=usertype, username=username, tags=tags,
+			username=username, tags=tags,
 			gender=gender)
 	p.save()
 
