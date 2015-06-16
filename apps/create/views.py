@@ -5,14 +5,7 @@ import datetime
 import models as md
 
 def create(request):
-    if 'username' in request.session:
-        username = request.session['username']
-        avatar = request.session['avatar']
-    else:
-        username = None
-        avatar = None
-        return HttpResponseRedirect('/home')
-    return render(request, 'create.html', {'user': username, "avatar": avatar})
+    return render(request, 'create.html', {'user': 'Ethan'})
 
 def s_create(request):
 
@@ -20,26 +13,23 @@ def s_create(request):
         return HttpResponse("需要登录后才能发布活动")
 
 
+    print request.POST
     print 'creating activity'
+
 
     name = request.POST['name']
     location = request.POST['location']
     introduction = request.POST['introduction']
     host = request.POST['host']
     create_time = datetime.datetime.now()
-    # start_time = request.POST['starttime']
-    # deadline = request.POST['deadline']
-    start_time = datetime.datetime.now()
-    deadline = datetime.datetime.now()
+    start_time = request.POST['start_time']
+    deadline = request.POST['deadline']
     creater_id = str(md.findUser(request.session['email']).id)
+    tags = request.POST['tags']
+    post = request.POST['post']
 
-    print request
-    print name, location, host, create_time, start_time, deadline, creater_id
-    print datetime.datetime.now()
-
-    tagsDict = {'tag_teach': '支教', 'tag_blood': '献血', 'tag_pe': '体育', 'tag_music': '音乐', 'tag_tree': '环保', 'tag_old': '敬老'}
-    tags = [tagsDict[key] for key in tagsDict if key in request.POST]
-    print tags
+    print name, location, host, create_time, start_time, deadline, creater_id, tags
+    print request.FILES
 
     # md.addActivity(name, location, introduction, host, create_time, start_time, deadline, creater_id, tags)
     # if 'email' in request.POST and 'password' in request.POST and 'confirmPwd' in request.POST and "user_type" in request.POST:
