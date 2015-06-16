@@ -7,3 +7,8 @@ def setPass(aid):
     result = Activity.objects(id=aid).first()
     result.isPass = 1
     result.save()
+
+def setFailPass(aid):
+    result = Activity.objects(id=aid).first()
+    result.isPass = -1
+    result.save()
