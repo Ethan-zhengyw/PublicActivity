@@ -18,14 +18,24 @@ def details(request, aid):
         isPar = md.checkPar(request.session['email'], aid)
         isCon = md.checkCon(request.session['email'], aid)
 
+        return render(request, 'details.html', {
+            'activity': activity,
+            'number1': number1,
+            'number2': number2,
+            'tags': tags,
+            'user': user.username,
+            'avatar': user.avatar,
+            'isPar': isPar,
+            'isCon': isCon
+        })
 
-    return render(request, 'details.html', {
-        'activity': activity,
-        'number1': number1,
-        'number2': number2,
-        'tags': tags,
-        'user': user.username,
-        'avatar': user.avatar,
-        'isPar': isPar,
-        'isCon': isCon
-    })
+    else:
+
+        return render(request, 'details.html', {
+            'activity': activity,
+            'number1': number1,
+            'number2': number2,
+            'tags': tags,
+            'user': None,
+            'avatar': None
+        })

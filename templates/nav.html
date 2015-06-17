@@ -1,8 +1,8 @@
 <div id="header_nav">
 	<h1>ACtivett</h1>
 	<a href="/home">发现活动</a>
-	<a href="/host">我的活动</a>
 	{% if user %} 
+	<a href="/host">我的活动</a>
 		<a class="addActivity" href="/create"> </a>
 		<a class="profile" href="#">{{user}}</a>
 		 <img src="{{ avatar }}">
