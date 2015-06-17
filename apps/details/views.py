@@ -12,28 +12,20 @@ def details(request, aid):
 
     tags = activity.tags.split(',')
 
+    if 'email' in request.session:
+        user = md.findUserByEmail(request.session['email'])
+
+        isPar = md.checkPar(request.session['email'], aid)
+        isCon = md.checkCon(request.session['email'], aid)
+
+
     return render(request, 'details.html', {
         'activity': activity,
         'number1': number1,
         'number2': number2,
-        'tags': tags
+        'tags': tags,
+        'user': user.username,
+        'avatar': user.avatar,
+        'isPar': isPar,
+        'isCon': isCon
     })
-
-
-def s_setting(request):
-
-    oldPwd = request.POST['oldPwd']
-    newPwd = request.POST['newPwd']
-    confirmPwd = request.POST['confirmPwd']
-
-    print request.POST['gender']
-
-    md.updatePwd(request.session['email'], oldPwd, newPwd, confirmPwd)
-
-    introduction = request.POST['introduction']
-    gender = request.POST['gender']
-    avatar = request.POST['avatar']
-    tags = request.POST['tags']
-    md.updateBasicInfo(introduction, gender, avatar, tags)
-
-    return HttpResponseRedirect('/setting')

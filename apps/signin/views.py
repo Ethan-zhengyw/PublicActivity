@@ -3,6 +3,10 @@ from django.http import HttpResponseRedirect, HttpResponse
 import models as md
 
 def signin(request):
+        if 'email' in request.session:
+            return HttpResponseRedirect('/home')
+
+
 	if 'username' in request.session:
 		username = request.session['username']
 	else:
@@ -18,13 +22,12 @@ def s_signin(request):
 			request.session['email'] = email
 			request.session['username'] = user.username
 			request.session['avatar'] = user.avatar
-			return HttpResponse("{'status': '1'}")
+                        return HttpResponseRedirect('/home')
 		else:
 			return HttpResponse("{'status': '0', 'message' : 'Login Error'}")
-	return HttpResponse("{}")
 
 def logout(request):
 	del request.session['email']
 	del request.session['username']
 	del request.session['avatar']
-	return HttpResponse("{}")	
+	return HttpResponseRedirect('/home')

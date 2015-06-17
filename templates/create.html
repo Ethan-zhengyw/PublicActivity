@@ -16,7 +16,7 @@
         <h1>发起活动<h1>
     </div>
     <div id="create_second">
-        <form class="form-inline" method="post" action="/service/create">
+        <form class="form-inline" enctype="multipart/form-data" method="post" action="/service/create">
             {% csrf_token %}
             <div>
                 <div class="form-attr form-group">
@@ -33,15 +33,15 @@
                 </div>
                 <div class="form-attr form-group">
                     <label for="starttime">开始时间</label>
-                    <input class="inputTime font form-control" type="text" name="activity[time]"/>
+                    <input class="inputTime font form-control" type="text" name="start_time"/>
                 </div>
                 <div class="form-attr form-group">
                     <label for="deadline">截止时间</label>
-                    <input class="inputTime font form-control" type="text" name="activity[time]"/>
+                    <input class="inputTime font form-control" type="text" name="deadline"/>
                 </div>
                 <div class="form-attr form-group">
                     <label for="tags">活动标签</label>
-                    <input id="inputTags" class="font form-control" type="text" value="" data-role="tagsinput"/> 
+                    <input id="inputTags" name="tags" class="font form-control" type="text" value="" data-role="tagsinput"/> 
                     <br />
                     <label></label>
                     <button type="button" class="tagbtn btn-addTag btn btn-default">支教</button>
@@ -68,7 +68,7 @@
                             <span class="btn btn-default btn-file">
                                 <span class="fileinput-new">Select image</span>
                                 <span class="fileinput-exists">Change</span>
-                                <input type="file" name="...">
+                                <input type="file" name="post">
                             </span>
                             <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                         </div>

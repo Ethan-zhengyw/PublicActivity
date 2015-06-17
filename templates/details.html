@@ -5,7 +5,6 @@
 {% block content %}
 
 <link type="text/css" rel="stylesheet" href="/css/details.css">
-<link type="text/css" rel="stylesheet" href="/css/.css">
 <script type="text/javascript" src="/js/details.js"></script>
 	<div class="a-content">
 		<div class="a-c-left">
@@ -59,7 +58,7 @@
 				</br>
 				<div class="a-c-r-t-content">
           {% for tag in tags %}
-          <button>{{ tag }}</button>
+            <button class="btn btn-default tagbtn">{{ tag }}</button>
           {% endfor %}
 				</div>
 			</div>

@@ -26,9 +26,11 @@ def s_create(request):
     deadline = request.POST['deadline']
     creater_id = str(md.findUser(request.session['email']).id)
     tags = request.POST['tags']
-    post = request.POST['post']
+    # post = request.POST['post']
 
     print name, location, host, create_time, start_time, deadline, creater_id, tags
+    print request
+    print '--------------------------'
     print request.FILES
 
     # md.addActivity(name, location, introduction, host, create_time, start_time, deadline, creater_id, tags)
