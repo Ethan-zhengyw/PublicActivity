@@ -36,6 +36,7 @@ urlpatterns = patterns('',
     url(r'^setting$', 'setting.views.setting', name='setting'),                             # 设置页面
     url(r'^service/setting$', 'setting.views.s_setting', name='s_setting'),                 # post表单地址
 
+    url(r'^$', 'home.views.explore', name='explore'),
     url(r'^home$', 'home.views.explore', name='explore'),                                   # 发现, 首页第一个Tab，查看所有公益活动
     url(r'^host$', 'home.views.host', name='host'),                                         # 查看我关注的活动&我报名参加的公益活动
 
