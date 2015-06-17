@@ -1,203 +1,34 @@
-{% extends "base_setting.html" %}
+{% extends 'base.html' %}
+
+{% block title %}个人设置{% endblock %}
+
 {% block content %}
-<div id="content">
-  <link rel="stylesheet" type="text/css" href="/css/setting.css">
-<h1 class="pagetitle">个人设置</h1>
-<div id="basicinfodiv">
-  <h3 class="subtitle">基本信息</h3>
-  <form enctype="multipart/form-data" method="post" action="/service/setting">
-    {% csrf_token %}
-    <input type="hidden" name="type" value="basic">
-    <table>
-      <tbody>
-        <tr>
-          <td class="key">注册邮箱</td>
-          <td class="value">
-            {% if user.email %}
-            {{ user.email }}
-            {% else %}
-            Amanda@sina.com
-            {% endif %}
-          </td>
-        </tr>
-        <tr>
-          <td class="key">用户名</td>
-          <td class="value">
-            {% if user.username %}
-            {{ user.username }}
-            {% else %}
-            Amanda
-            {% endif %}
-          </td>
-        </tr>
-        <tr>
-          <td class="key">性别</td>
-          <td class="value gendertd">
-            <label class="genderlabel">
-              汉子&nbsp;
-              <input type="radio" name="user[gender]" value="0" checked="{% if user.gender == 0 %}true{% endif %}">
-            </label>
-            <label class="genderlabel">
-              &nbsp; &nbsp; 妹子 &nbsp;
-              <input type="radio" name="user[gender]" value="1" checked="{% if user.gender == 1 %}true{% endif %}">
-            </label>
-            <label class="genderlabel">
-              &nbsp; &nbsp; 保密 &nbsp;
-              <input type="radio" name="user[gender]" value="2" checked="{% if user.gender != 0 and user.gender != 1 %}true{% endif %}">
-            </label>
-          </td>
-        </tr>
-        <tr>
-          <td class="key">头像</td>
-          <td class="value">
-            当前头像&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置新头像
-          </td>
-        </tr>
-        <tr>
-          <td class="key"></td>
-          <td>
-            <img id="currentAvatar" src="{% if user.avatar %}{{ user.avatar }}{% else %}/img/Amanda.png{% endif %}"/>
-            <input id="avatar-input" type="file" name="avatar" style="display: inline">
-            <image-cropper input="#avatar-input" preview="#avatar-preview">
-            <link rel="stylesheet" type="text/css" href="/css/image-cropper.css">
-            <input type="text" class="image-cropper-crop-x" name="image-cropper-avatar-crop-x">
-            <input type="text" class="image-cropper-crop-y" name="image-cropper-avatar-crop-y">
-            <input type="text" class="image-cropper-crop-width" name="image-cropper-avatar-crop-width">
-            <input type="text" class="image-cropper-crop-height" name="image-cropper-avatar-crop-height">
-            <!-- <div class="image-cropper-cropping" style="background-image: url(); background-size: 491.563829787234px 123px; background-position: -56.4753191489362px 0px; background-repeat: no-repeat;"> -->
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="key tagkey">订阅的Tag</td>
-          <td class="value tagvalue">
-            <!-- <input id="inputTags" type="text" value="讲座,音乐,动漫,创业,营销" name="user[tags]" data-role="tagsinput" style="display: none;"> -->
-            <div class="bootstrap-tagsinput">
-              <!-- <span class="tag label label-info">讲座<span data-role="remove"></span></span>
-              <span class="tag label label-info">音乐<span data-role="remove"></span></span> 
-              <span class="tag label label-info">动漫<span data-role="remove"></span></span> 
-              <span class="tag label label-info">创业<span data-role="remove"></span></span> 
-              <span class="tag label label-info">营销<span data-role="remove"></span></span>  -->
-              <input type="text" placeholder="" style="width: 24em !important;">
-            </div>
-            <br>
-            {% if validtags %}
-              {% for tag in validtags %}
-                <button type="button" class="btn-addTag btn btn-default">{{ tag }}</button>
-              {% endfor %}
-            {% else %}
-              <button type="button" class="btn btn-default">no tag</button>
-            {% endif %}
-            <!-- <button type="button" class="btn-addTag btn btn-default">小品剧</button>
-            <button type="button" class="btn-addTag btn btn-default">公益</button>
-            <button type="button" class="btn-addTag btn btn-default">动漫</button>
-            <button type="button" class="btn-addTag btn btn-default">篮球</button>
-            <button type="button" class="btn-addTag btn btn-default">创业</button>
-            <button type="button" class="btn-addTag btn btn-default">策划</button>
-            <button type="button" class="btn-addTag btn btn-default">软件</button>
-            <button type="button" class="btn-addTag btn btn-default">体育盖章</button>
-            <button type="button" class="btn-addTag btn btn-default">维纳斯</button>
-            <button type="button" class="btn-addTag btn btn-default">讲座</button>
-            <button type="button" class="btn-addTag btn btn-default">电影</button>
-            <button type="button" class="btn-addTag btn btn-default">音乐</button>
-            <button type="button" class="btn-addTag btn btn-default">营销</button>
-            <button type="button" class="btn-addTag btn btn-default">环保</button> -->
-          </td>
-        </tr>
-        <tr>
-          <td class="key"></td>
-          <td class="value">
-            <button type="submit" class="savebtn btn btn-default">确认修改</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </form>
-  <hr>
-  <h3 class="pwdtitle">修改密码</h3>
-  <form method="post" action="/service/setting">
-    {% csrf_token %}
-    <input type="hidden" name="type" value="pwd">
-    <table>
-      <tbody>
-        <tr>
-          <td class="key">原密码</td>
-          <td class="value">
-            <input type="password" name="user[pwdOriginal]" class="myinput form-control">
-          </td>
-        </tr>
-        <tr>
-          <td class="key">新密码</td>
-          <td class="value">
-            <input type="password" name="user[pwdNew]" class="myinput form-control">
-          </td>
-        </tr>
-        <tr>
-          <td class="key">确认密码</td>
-          <td class="value">
-            <input type="password" name="user[pwdNewConfirm]" class="myinput form-control">
-          </td>
-        </tr>
-        <tr>
-          <td class="key"></td>
-          <td class="value">
-            <button type="submit" class="savebtn btn btn-default">确认修改</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </form>
-  <hr>
-  <h3 class="pwdtitle">真实信息</h3>
-  <form method="post" action="/service/setting">
-    {% csrf_token %}
-    <input type="hidden" name="type" value="realInfo">
-    <table>
-      <tbody>
-        <tr>
-          <td class="key">真实姓名</td>
-          <td class="value">
-            <input type="text" name="user[real_name]" value="{% if user.username %}{{ user.username }}{% else %}逗比{% endif %}" class="myinput form-control">
-          </td>
-        </tr>
-        <tr>
-          <td class="key">联系方式</td>
-          <td class="value">
-            <input type="text" name="user[phone_num]" value="{% if user.phone %}{{ user.phone }}{% else %}13824849249{% endif %}" class="myinput form-control">
-          </td>
-        </tr>
-        <tr>
-          <td class="key">QQ</td>
-          <td class="value">
-            <input type="text" name="user[qq]" value="{% if user.qq %}{{ user.qq }}{% else %}10000{% endif %}" class="myinput form-control">
-          </td>
-        </tr>
-        <tr>
-          <td class="key">微信</td>
-          <td class="value">
-            <input type="text" name="user[weixin]" value="{% if user.weixin %}{{ user.weixin }}{% else %}逗了个比{% endif %}" class="myinput form-control">
-          </td>
-        </tr>
-        <tr>
-          <td class="key"></td>
-          <td class="value">
-            <button type="submit" class="savebtn btn btn-default">确认修改</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </form>
-</div>
-<script src="/js/setting.js"></script>
-<script src="/js/bootstrap-tagsinput.js"></script>
-</div>
+<p> {{ user }} </p>
+<form method="post" action="/service/setting">
+
+  {% csrf_token %}
+  <label for="oldPwd">原密码</label>
+  <input type="password" name="oldPwd"/> 
+  <br />
+
+  <label for="newPwd">新密码</label>
+  <input type="password" name="newPwd"/> 
+  <br />
+
+  <label for="confirmPwd">确认密码</label>
+  <input type="password" name="confirmPwd"/> 
+  <br />
+
+
+  <label for="introduction">Introduction</label>
+  <input type="text" name="introduction"/> 
+  <br />
+
+  <label for="gender">gender</label>
+  <input type="radio" id="male" name="gender" value="0" checked="checked"/>male
+  <input type="radio" id="female" name="gender" value="1"/>female
+  <br />
+
+  <input type="submit" value="提交">
+</form>
 {% endblock %}
-<!-- 
-<div id="footer">
-  <p class="copyright">© 2015 Activitee, all rights reserved</p>
-</div>
-<script src="./resource/layout.js"></script>
-<script type="application/javascript" src="./resource/livereload.js"></script>
-<script src="./resource/jquery.datetimepicker.js"></script>
-</body>
-</html> -->
