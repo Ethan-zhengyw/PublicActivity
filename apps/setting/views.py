@@ -4,8 +4,14 @@ import models as md
 
 def setting(request):
     #TODO check whether user have signin
+
+    user = md.findUser(request.session['email'])
+
     print request.session['email']
-    return render(request, 'setting.html', {'user': md.findUser(request.session['email'])})
+    return render(request, 'setting.html', {
+        'user': user.username,
+        'avatar': user.avatar
+    })
 
 
 def s_setting(request):
