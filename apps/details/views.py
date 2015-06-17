@@ -39,3 +39,32 @@ def details(request, aid):
             'user': None,
             'avatar': None
         })
+
+
+def setPar(request, aid):
+    
+    email = request.session['email']
+    md.setPar(email, aid)
+    
+    return HttpResponseRedirect('/details/' + aid)
+
+def setCon(request, aid):
+    
+    email = request.session['email']
+    md.setCon(email, aid)
+
+    return HttpResponseRedirect('/details/' + aid)
+
+def unsetPar(request, aid):
+    
+    email = request.session['email']
+    md.unsetPar(email, aid)
+    
+    return HttpResponseRedirect('/details/' + aid)
+
+def unsetCon(request, aid):
+    
+    email = request.session['email']
+    md.unsetCon(email, aid)
+
+    return HttpResponseRedirect('/details/' + aid)

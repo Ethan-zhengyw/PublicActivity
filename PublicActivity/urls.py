@@ -37,11 +37,11 @@ urlpatterns = patterns('',
 
     url(r'^details/(\w+)$', 'details.views.details', name='details'),    # 公益活动详情页面
 
-    url(r'^service/(?P<aid>\w+)/follow$', 'details.views.follow', name='follow'),      # 关注
-    url(r'^service/(?P<aid>\w+)/unfollow$', 'details.views.unfollow', name='unfollow'),   # 取消关注
+    url(r'^service/details/setPar/(\w+)$', 'details.views.setPar', name='setPar'),         # 报名
+    url(r'^service/details/unsetPar/(\w+)$', 'details.views.unsetPar', name='unsetPar'),   # 取消报名
 
-    url(r'^service/(?P<aid>\w+)/join$', 'details.views.join', name='join'),      # 关注
-    url(r'^service/(?P<aid>\w+)/unjoin$', 'details.views.unjoin', name='unjoin'),   # 取消关注
+    url(r'^service/details/setCon/(\w+)$', 'details.views.setCon', name='setCon'),      # 关注
+    url(r'^service/details/unsetCon/(\w+)$', 'details.views.unsetCon', name='unsetCon'),   # 取消关注
 
     url(r'^manager$', 'manager.views.manager', name='manager'),
     url(r'^service/setPass/(\w+)$', 'manager.views.setPass', name='setPass'),
