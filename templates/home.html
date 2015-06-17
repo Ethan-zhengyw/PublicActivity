@@ -42,18 +42,18 @@
   <div id="act_area">
 
     <ul id="myTab" class="nav nav-tabs">
-      <li data-id="future" class="timing active"><a href="#future" data-toggle="tab">即将进行</a></li>
-      <li data-id="past" class="timing"><a href="#past" data-toggle="tab">往期回顾</a></li>
-      <li data-id="all" class="timing"><a href="#all" data-toggle="tab">所有公益</a> </li>
+      <li data-id="future" class="timing active"><a href="#future" data-toggle="tab">即将进行{{ acts_now | length }}</a></li>
+      <li data-id="past" class="timing"><a href="#past" data-toggle="tab">往期回顾 {{ acts_off | length }}</a></li>
+      <li data-id="all" class="timing"><a href="#all" data-toggle="tab">所有公益{{ activities | length }}</a> </li>
     </ul>
 
     <div class="tab-content">
       <div id="future" class="tab-pane fade active in">
-        {% include 'home_activities.html' with activities=activities %}
+        {% include 'home_activities.html' with activities=acts_now %}
       </div>
 
       <div id="past" class="tab-pane fade">
-        {% include 'home_activities.html' with activities=activities %}
+        {% include 'home_activities.html' with activities=acts_off %}
       </div>
 
       <div id="all" class="tab-pane fade">

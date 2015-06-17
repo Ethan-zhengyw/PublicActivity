@@ -2,19 +2,28 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 import models as md
+import datetime
 
 def explore(request):
+
     activities = md.findAllActivities()
-    # tmp = get_template('home.html')
-    # html = tmp.render(Context({'activities' : activities}))
-    # return HttpResponse(html)
+    acts_now = [act for act in activities if (act.deadline - datetime.datetime.now()).total_seconds() > 0]
+    acts_off = [act for act in activities if (act.deadline - datetime.datetime.now()).total_seconds() < 0]
+
     if 'username' in request.session:
         username = request.session['username']
         avatar = request.session['avatar']
     else:
         username = None
         avatar = None
-    return render(request, 'home.html', {'activities': activities, "user": username, "avatar": avatar})
+
+    return render(request, 'home.html', {
+        'activities': activities,
+        'acts_now': acts_now,
+        'acts_off': acts_off,
+        "user": username,
+        "avatar": avatar
+    })
 
 
 def host(request):
