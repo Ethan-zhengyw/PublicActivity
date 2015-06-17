@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://localhost:5000/setting -->
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>个人设置</title>
+  <link rel="stylesheet/less" type="text/css" href="/css/include.less">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/jquery.datetimepicker.css">
+  <link rel="stylesheet" href="/css/layout.css">
+</head>
+<body>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <div id="header">
+    <div class="wrap">
+      <img src="/img/Activitee-logo-S.png" alt="logo" class="logo">
+      <ul class="nav">
+        <li><a href="http://localhost:5000/home" class="home">发现活动</a></li>
+        <li><a href="http://localhost:5000/host" class="host">我的活动</a></li>
+      </ul>
+      <a href="http://localhost:5000/create">
+        <div class="create align-right">
+          <div class="createhover">新建活动</div>
+        </div>
+      </a>
+      <div class="profile">
+        <img src="/img/Amanda.png" class="avatar">
+        <p class="username">Amanda</p>
+        <div class="profile-menu hide">
+          <ul>
+            <li>
+              <a href="setting" class="setting">设置</a>
+            </li>
+            <li>
+              <a href="logout" class="signout">退出</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="search">
+        <form>
+          {% csrf_token %}
+          <input type="text" class="text">
+          <input type="submit" value="" class="button">
+        </form>
+      </div>
+    </div>
+  </div>
+  {% block content %}
+    <div>这里是默认内容，所有继承自这个模板的，如果不覆盖就显示这里的默认内容。</div>
+  {% endblock %}
+  {% include 'bottom.html' %} 
+  </body>
+      <script src="/js/Less.js"></script>
+</html>
