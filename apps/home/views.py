@@ -34,9 +34,11 @@ def host(request):
         username = request.session['username']
         avatar = request.session['avatar']
         email = request.session['email']
+        user_type = md.findCurrentUser(request.session['email']).user_type
     else:
         username = None
         avatar = None
+        user_type = None
         return HttpResponseRedirect('/home')
 
     acts_con, acts_par, acts_cre = md.findConcernedActivities(request.session['email'])
@@ -47,4 +49,5 @@ def host(request):
         "avatar": avatar,
         'email': email,
         'user': username,
+        'user_type': user_type
     })
