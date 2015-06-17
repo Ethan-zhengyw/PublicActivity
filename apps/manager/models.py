@@ -1,4 +1,10 @@
 from model.activity import *
+from model.user import *
+
+def findUser(email):
+    user = User.objects(email=email).first()
+    return user
+
 def findNotPassedActivities():
     result = Activity.objects(isPass=0).all()
     return result

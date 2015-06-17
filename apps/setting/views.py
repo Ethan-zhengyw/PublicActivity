@@ -10,7 +10,8 @@ def setting(request):
     print request.session['email']
     return render(request, 'setting.html', {
         'user': user.username,
-        'avatar': user.avatar
+        'avatar': user.avatar,
+        'user_type': user.user_type
     })
 
 

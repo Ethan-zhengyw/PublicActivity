@@ -16,6 +16,7 @@ def edit(request, aid):
     return render(request, 'edit.html', {
         'activity': activity,
         'user': user.username,
+        'user_type': user.user_type,
         'avatar': user.avatar
     })
 

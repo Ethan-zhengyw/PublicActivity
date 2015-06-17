@@ -47,6 +47,7 @@ urlpatterns = patterns('',
 
     url(r'^service/details/setCon/(\w+)$', 'details.views.setCon', name='setCon'),          # 关注
     url(r'^service/details/unsetCon/(\w+)$', 'details.views.unsetCon', name='unsetCon'),    # 取消关注
+    url(r'^service/details/makeComment/(\w+)$', 'details.views.makeComment', name='makeComment'),    # 评论
 
     url(r'^manager$', 'manager.views.manager', name='manager'),                             
     url(r'^service/setPass/(\w+)$', 'manager.views.setPass', name='setPass'),

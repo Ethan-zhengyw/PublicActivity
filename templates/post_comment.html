@@ -1,25 +1,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-样式路径得更改->
-<link href="../static/css/post_comment.css" rel="stylesheet" type="text/css" />
-<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="/css/post_comment.css" rel="stylesheet" type="text/css" />
 <div id="comment_background">
     <div>
-        <!-{{comment.number}}->
+        
         <!-{{comment.pageNumber}}->
-        <span class="text_attr" id="comment_number">1-10/共24条评论</span>
-        <div id="page_number">
-            <span class="text_attr">&lt;</span>
-            <span id="current_page_number" class="text_1 text_attr">1</span>
-            <span class="text_1 text_attr">2&nbsp;3&nbsp;..&gt;</span>
-            <span class="text_attr">&nbsp;共3页，到第</span>
-            <input id="page" />
-            <span class="text_attr">页，</span>
-            <button id="jump" class="btn btn-default" type="sumbit">确定</button>
-        </div>
+        <span class="text_attr" id="comment_number">共{{ comments | length }}条评论</span>
     </div>
     <div id="comment_area">
         <span id="text">发表评论</span><br />
-        <textarea class="form-control"></textarea><br />
+        <form method="post" action="/service/details/makeComment/{{ activity.id }}">
+          {% csrf_token %}
+        <textarea class="form-control" name="content"></textarea><br />
         <button id="sumbit" class="btn btn-default" type="sumbit">评论</button>
+      </form>
     </div>
 </div>

@@ -22,7 +22,11 @@ def signup(request):
         username = request.session['username']
     else:
         username = None
-    return render(request, 'signup.html', {'user': username})
+    return render(request, 'signup.html', {
+        'user': username,
+        'avatar': None,
+        'user_type': None
+    })
 
 def checkUsedEmail(request):
     if 'email' in request.POST:

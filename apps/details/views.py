@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
 
+import datetime
 import models as md
 
 class Comment:
@@ -18,7 +19,7 @@ def details(request, aid):
     number2 = len(activity.concern)
 
     tags = activity.tags.split(',')
-    temp_result = getComments(activity.comments)
+    temp_result = md.getComments(activity.comments)
     comments = []
     for item in temp_result:
         comments.append(Comment(item[0], item[1], item[2], item[3]))
@@ -36,6 +37,7 @@ def details(request, aid):
             'tags': tags,
             'user': user.username,
             'avatar': user.avatar,
+            'user_type': user.user_type,
             'isPar': isPar,
             'isCon': isCon,
             'comments' : comments
@@ -56,7 +58,7 @@ def details(request, aid):
 def makeComment(request, aid):
     email = request.session['email']
     content = request.POST['content']
-    date = request.POST['date']
+    date = datetime.datetime.now()
     md.saveComment(email, aid, date, content)
     return HttpResponseRedirect('/details/' + aid)
 

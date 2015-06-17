@@ -3,9 +3,14 @@
 	<a href="/home">发现活动</a>
 	{% if user %} 
 	<a href="/host">我的活动</a>
+    {% if user_type == 1 %}
 		<a class="addActivity" href="/create"> </a>
+    {% endif %}
+		<a class="profile" href="/logout">logout</a>
 		<a class="profile" href="/setting">{{user}}</a>
+    {% if avatar %}
 		 <img src="{{ avatar }}">
+    {% endif %}
 		<ul class="hidden_menu">
 			<li><a href="/setting">设置</a></li>
 			<li><a href="/logout">退出</a></li>

@@ -11,6 +11,7 @@ body{
 	width:1000px;
 	margin: 0 auto;
   margin-top: 50px;
+  padding-bottom: 500px;
 }
 
 .a-c-left{
@@ -104,12 +105,12 @@ h1,h2,h4{
 }
 
 .a-c-r-tag{
-	height: 150px;
 	background-color: white;
 	border-width: 1px;
 	border-color: #d0d0d0;
 	border-style: solid;
 	margin-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .a-c-r-t-content{
@@ -169,4 +170,8 @@ h1,h2,h4{
   color: #FFF;
   background-color: orange;
   border-color: #ccc;
+}
+
+.tagbtn {
+  margin: 5px;
 }

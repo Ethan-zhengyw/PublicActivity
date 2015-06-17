@@ -11,7 +11,11 @@ def signin(request):
 		username = request.session['username']
 	else:
 		username = None
-	return render(request, 'signin.html', {'user': username})
+	return render(request, 'signin.html', {
+            'user': username,
+            'avatar': None,
+            'user_type': None
+        })
 
 def s_signin(request):
 	if 'email' in request.POST and 'password' in request.POST:
@@ -27,7 +31,8 @@ def s_signin(request):
 			return HttpResponse("{'status': '0', 'message' : 'Login Error'}")
 
 def logout(request):
-	del request.session['email']
-	del request.session['username']
-	del request.session['avatar']
+        if 'email' in request.session:
+            del request.session['email']
+            del request.session['username']
+            del request.session['avatar']
 	return HttpResponseRedirect('/home')

@@ -4,7 +4,7 @@ def addUser(email, password, gender, username, tags):
 	defaultAvatar = "/img/default_avatar.png"
 	p = User(email=email, password=md5HashPwd(password),
 			username=username, tags=tags,
-			gender=gender, avatar=defaultAvatar)
+			gender=gender, avatar=defaultAvatar, user_type=2)
 	p.save()
 
 def checkEmail(email):

@@ -14,7 +14,8 @@ def create(request):
 
     return render(request, 'create.html', {
         'user': user.username,
-        'avatar': user.avatar
+        'avatar': user.avatar,
+        'user_type': user.user_type
     })
 
 def s_create(request):

@@ -51,9 +51,7 @@ def findConcernedActivities(email):
     for idx in user.create:
         result_cre.append(Activity.objects(id=idx).first())
 
-    print result_con, result_par, result_cre
     return result_con, result_par, result_cre
-    # Create your models here.
 
 def findCurrentUser(email):
     user = User.objects(email=email).first()

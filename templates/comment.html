@@ -1,0 +1,29 @@
+<link rel="stylesheet" type="text/css" href="/css/comment.css">
+
+{% if comments %}
+  {% for comment in comments %}
+    <div class="comment">
+      <div class="c-content">
+        <table style="word-break:break-all; word-wrap:break-all;">
+          <tr>
+            <td rowspan="2"><img class="c-img" src="{{ comment.avatar }}" height="100" width="90"></td>
+            <td><p style="color:blue">{{ comment.user_name }}</p></td>
+          </tr>
+          <tr>
+            <td>{{ comment.content }}</td>
+          </tr>
+        </table>
+
+      </div>
+
+      <div class="c-time">
+      <table>
+        <tr>
+          <td><p class="c-t-p">{{ comment.date }}</p></td>
+          </tr>
+      </table>
+          
+      </div>
+    </div>
+  {% endfor %}
+  {% endif %}

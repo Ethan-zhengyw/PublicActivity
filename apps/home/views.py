@@ -13,16 +13,19 @@ def explore(request):
     if 'username' in request.session:
         username = request.session['username']
         avatar = request.session['avatar']
+        user_type = md.findCurrentUser(request.session['email']).user_type
     else:
         username = None
         avatar = None
+        user_type = None
 
     return render(request, 'home.html', {
         'activities': activities,
         'acts_now': acts_now,
         'acts_off': acts_off,
         "user": username,
-        "avatar": avatar
+        "avatar": avatar,
+        'user_type': user_type
     })
 
 
