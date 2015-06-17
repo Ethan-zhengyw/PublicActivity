@@ -39,7 +39,7 @@ def findConcernedActivities(email):
     # print user
     # user.save()
     # print '1111'
-
+    
     user = User.objects(email=email).first()
     result_con = []
     result_par = []

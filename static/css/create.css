@@ -11,6 +11,8 @@ body {
 #create_second{
     background-color:white;
     padding:30px;
+    height: 800px;
+    margin-top: 50px;
 }
 
 label{
@@ -103,7 +105,4 @@ label{
 
 .activity_1{
     vertical-align:top;
-}
-
-#submit {
 }

@@ -22,7 +22,7 @@ def s_signin(request):
 			request.session['email'] = email
 			request.session['username'] = user.username
 			request.session['avatar'] = user.avatar
-                        return HttpResponseRedirect('/home')
+			return HttpResponse("{'status': '1', 'message' : 'Login succeed'}")
 		else:
 			return HttpResponse("{'status': '0', 'message' : 'Login Error'}")
 
