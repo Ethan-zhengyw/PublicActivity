@@ -1,0 +1,155 @@
+image-cropper {
+  position: relative;
+  float: right;
+  height: 200px;
+  width: 300px;
+  top: 20px;
+  left: -200px;
+  border: solid 0px #DFDFDF;
+  margin-bottom: 25px;
+}
+#avatar-preview {
+  position: relative;
+  left: -285px;
+  top: 50px;
+  float: right;
+  height: 125px;
+  width: 125px;
+  border: solid 1px #DFDFDF;
+}
+#avatar-input {
+  vertical-align: top;
+  margin-left: 30px;
+  color: orange;
+}
+body {
+  background-color: #f4f4eb;
+}
+.container {
+  background-color: #ffffff;
+}
+.pagetitle {
+  font-size: 35px;
+  margin-left: 120px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+#basicinfodiv {
+  background-color: #FFFFFF;
+  width: 1280px;
+  margin: auto;
+}
+.myinput {
+  border-radius: 10px;
+  border-color: #F6DD63;
+  width: 450px;
+}
+.myinput:focus {
+  border-radius: 10px;
+  border-color: #F6DD63;
+  width: 450px;
+}
+hr2 {
+  width: 960;
+  style: filter
+  size: 5px;
+  color: orange;
+  background-color: orange;
+}
+hr {
+  display: block;
+  height: 1px;
+  border-top: 1px solid orange;
+  width: 960px;
+}
+.pwdtitle {
+  padding-top: 10px;
+  margin-left: 100px;
+}
+.subtitle {
+  padding-top: 50px;
+  margin-left: 100px;
+}
+table {
+  width: 960px;
+  margin-left: 200px;
+}
+.key {
+  width: 150px;
+  font-size: 18;
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.value {
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.gendertd {
+  color: orange;
+  font-size: 20px;
+  font-weight: bold;
+}
+#currentAvatar {
+  margin-left: 20px;
+  width: 75px;
+  height: 75px;
+}
+.tagkey {
+  vertical-align: top;
+}
+.tagvalue {
+  width: 1000px;
+}
+.savebtn {
+  border-radius: 10px;
+  color: white;
+  background-color: #F1B400;
+}
+.bootstrap-tagsinput {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  display: inline-block;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+  color: #555;
+  vertical-align: middle;
+  border-radius: 4px;
+  max-width: 100%;
+  line-height: 22px;
+  cursor: text;
+}
+.bootstrap-tagsinput input {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  width: auto !important;
+  max-width: inherit;
+}
+.bootstrap-tagsinput input:focus {
+  border: none;
+  box-shadow: none;
+}
+.bootstrap-tagsinput .tag {
+  margin-right: 2px;
+  color: white;
+}
+.bootstrap-tagsinput .tag [data-role="remove"] {
+  margin-left: 8px;
+  cursor: pointer;
+}
+.bootstrap-tagsinput .tag [data-role="remove"]:after {
+  content: "x";
+  padding: 0px 2px;
+}
+.bootstrap-tagsinput .tag [data-role="remove"]:hover {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.bootstrap-tagsinput .tag [data-role="remove"]:hover:active {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
