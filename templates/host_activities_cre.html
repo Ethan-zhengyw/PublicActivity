@@ -13,7 +13,7 @@
           <p>{{ activity.start_time }}</p>
           <p>{{ activity.location }}</p>
           <p></p>
-          <p>0 人关注    0 人参加</p>
+          <p>{{ activity.concern | length }} 人关注    {{ activity.participate | length }} 人参加</p>
         </div>
       </a>
       <span class="edit">
