@@ -65,3 +65,17 @@ def unsetCon(email, aid):
 
     user.save()
     activity.save()
+
+def getComments(comments):
+	result = []
+	for comment in comments:
+		usr = User.objects(id=comment.user_id).first()
+		result.append((usr.username, comment.content, usr.avatar, usr.date))
+	return result
+
+def saveComment(email, aid, date_, content_):
+	user = findUserByEmail(email)
+	activity = Activity.objects(id=aid).first()
+	activity.comments.append(Comment(content=content_, user_id=user.id, date=date_))
+	activity.save()
+

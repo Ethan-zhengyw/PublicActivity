@@ -3,6 +3,11 @@ from mongoengine import *
 
 connect('activity')
 
+class Comment(EmbeddedDocument):
+    content = StringField()
+    user_id = StringField()
+    date = DateTimeField()
+
 class Activity(Document):
     name = StringField(required=True)
     create_time = DateTimeField(required=True)
@@ -19,3 +24,5 @@ class Activity(Document):
     participate = ListField()  # 报名
 
     post = StringField()  # 活动海报
+
+    comments = ListField(EmbeddedDocumentField(Comment))  # comments
