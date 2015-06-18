@@ -2,7 +2,14 @@
 	<h1>ACtivett</h1>
 	<a href="/home">发现活动</a>
 	{% if user %} 
-	<a href="/host">我的活动</a>
+
+  {% if user_type == 0 %}
+    <a href="/manager">管理活动</a>
+    {% else %}
+    <a href="/host">我的活动</a>
+    {% endif %}
+
+
     {% if user_type == 1 %}
 		<a class="addActivity" href="/create"> </a>
     {% endif %}

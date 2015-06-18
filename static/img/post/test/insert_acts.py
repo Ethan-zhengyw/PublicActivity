@@ -23,8 +23,8 @@ def example1():
 def example2():
 	name = "为中国而教"
 	create_time = datetime.datetime.strptime('2015-03-01', '%Y-%m-%d')
-	start_time = datetime.datetime.strptime('2015-03-21', '%Y-%m-%d')
-	deadline = datetime.datetime.strptime('2015-03-31', '%Y-%m-%d')
+	start_time = datetime.datetime.strptime('2015-08-21', '%Y-%m-%d')
+	deadline = datetime.datetime.strptime('2015-07-31', '%Y-%m-%d')
 	introduction = "我们以培养促进教育公平的领导者为使命，招募并输送优秀大学毕业生到农村学校或城市打工子弟学校任教两年，并为志愿者提供持续而系统的培训和支持，培养和集结关心教育的优秀人才，以此促进中国社会的进步！"
 	host = "为中国而教项目"
 	creater_id = str(User.objects().first().id)
@@ -37,8 +37,8 @@ def example2():
 def example3():
 	name = "特殊少儿家庭同乐日"
 	create_time = datetime.datetime.strptime('2015-03-01', '%Y-%m-%d')
-	start_time = datetime.datetime.strptime('2015-03-21', '%Y-%m-%d')
-	deadline = datetime.datetime.strptime('2015-03-31', '%Y-%m-%d')
+	start_time = datetime.datetime.strptime('2015-09-21', '%Y-%m-%d')
+	deadline = datetime.datetime.strptime('2015-08-31', '%Y-%m-%d')
 	introduction = "厦门诺苗是一家由特殊少儿的家长发起的民间公益机构，从2009年开始，我们在厦门举办同乐日.\n时至今日，我们已将同乐日推广到厦门周边漳州，龙岩等地，并培训了国内各地20多个机构，并推动他们也举办同乐日。同乐日活动深深地得到特殊少儿、特殊少儿家长、社会公众、爱心企业、大学生志愿团体的认可和喜爱。"
 	host = "厦门诺苗教育咨询有限公司"
 	creater_id = str(User.objects().first().id)
@@ -51,8 +51,8 @@ def example3():
 def example4():
 	name = "情浓端午粽是有爱"
 	create_time = datetime.datetime.strptime('2015-03-01', '%Y-%m-%d')
-	start_time = datetime.datetime.strptime('2015-03-21', '%Y-%m-%d')
-	deadline = datetime.datetime.strptime('2015-03-31', '%Y-%m-%d')
+	start_time = datetime.datetime.strptime('2015-10-21', '%Y-%m-%d')
+	deadline = datetime.datetime.strptime('2015-11-30', '%Y-%m-%d')
 	introduction = "发放端午节咸蛋、粽子爱心物资给粮道街、紫阳街、黄鹤楼街读书社区93户低保困难家庭。"
 	host = "武汉爱心食物中心"
 	creater_id = str(User.objects().first().id)
@@ -65,8 +65,8 @@ def example4():
 def example5():
 	name = "标致雪铁龙“绿色出行，低碳环保”儿童环境保护家庭教育项目"
 	create_time = datetime.datetime.strptime('2015-03-01', '%Y-%m-%d')
-	start_time = datetime.datetime.strptime('2015-03-21', '%Y-%m-%d')
-	deadline = datetime.datetime.strptime('2015-03-31', '%Y-%m-%d')
+	start_time = datetime.datetime.strptime('2015-06-21', '%Y-%m-%d')
+	deadline = datetime.datetime.strptime('2015-06-30', '%Y-%m-%d')
 	introduction = "推广公众的道路交通安全和环境保护意识是标致雪铁龙集团在中国的一项重要工作。\n自2011年起，标致雪铁龙集团及标致雪铁龙基金会携手全国妇联心系系列活动组委会启动“绿色出行，低碳环保”儿童环境保护家庭教育活动，旨在为成长中的中国儿童树立绿色、环保的社会观和价值观，为中国社会实现节能环保和可持续发展做出贡献。\n2012年是标致雪铁龙集团携手全国妇联致力于儿童环保家庭教育项目的第二年，届时绿色安全脚步将陆续走进北京、上海、广州、武汉和深圳5座城市的700所幼儿园，共计超过50万名儿童及其家庭将从中受益。"
 	host = "标致雪铁龙基金会"
 	creater_id = str(User.objects().first().id)
@@ -79,8 +79,8 @@ def example5():
 def example6():
 	name = "博爱助学计划"
 	create_time = datetime.datetime.strptime('2015-03-01', '%Y-%m-%d')
-	start_time = datetime.datetime.strptime('2015-03-21', '%Y-%m-%d')
-	deadline = datetime.datetime.strptime('2015-03-31', '%Y-%m-%d')
+	start_time = datetime.datetime.strptime('2015-07-21', '%Y-%m-%d')
+	deadline = datetime.datetime.strptime('2015-07-31', '%Y-%m-%d')
 	introduction = "为了弘扬“人道、博爱、奉献”的红十字精神，广泛动员社会资源资助贫困地区教育条件的改善，中国红十字基金会在教育领域倡导实施“博爱助学计划”公益项目。\n“博爱助学计划”的宗旨是：广泛动员社会力量，在贫困地区农村援建博爱小学，为贫困地区中小学捐赠博爱电脑教室和“红十字书库”，设立博爱助学金资助贫困大学生完成学业，协助政府改善贫困地区的办学条件。"
 	host = "中国红十字基金会"
 	creater_id = str(User.objects().first().id)

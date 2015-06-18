@@ -2,7 +2,7 @@
 from model.user import *
 from model.activity import *
 def findAllActivities():
-    result = Activity.objects.all()
+    result = Activity.objects(isPass=1).all()
     return result
 
 def findConcernedActivities(email):
