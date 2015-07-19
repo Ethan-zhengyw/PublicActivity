@@ -7,16 +7,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^blog/', include('blog.urls')),
-    #     url   app-name.views.http-handler-name appname
 
-    # test url
-    #url(r'^index$', 'learn.views.index', name='index'),
-    #url(r'^home$', 'learn.views.home', name='home'),
-    #url(r'^add/$', 'calc.views.add', name='add'),
-    #url(r'^add/(\d+)/(\d+)/$', 'calc.views.add2', name='add2'),
-    #url(r'^homeTpl$', 'renderWithTpl.views.home', name='homeTpl'),
     url(r'^signup$', 'signup.views.signup', name='signup'),                                 # 注册页面
     url(r'^checkEmail$', 'signup.views.checkUsedEmail', name='checkEmail'),
     url(r'^service/signup$', 'signup.views.s_signup', name='s_signup'),                     # 注册post表单地址
